@@ -1,0 +1,166 @@
+import type { Service } from '@/types';
+
+export const SERVICES: Service[] = [
+  {
+    id: 'evaluacion-energetica',
+    name: 'Evaluación Energética S.L.C®️',
+    tagline: 'El punto de partida oficial del sistema',
+    description: 'Análisis informacional del campo energético individual para determinar compatibilidad con el Sistema Luz Cuántica®️ y definir las herramientas coherentes según el estado del campo.',
+    bullets: [
+      'Mapeo inicial del campo informacional',
+      'Determinación de aptitud para ingreso al sistema',
+      'Definición de herramientas coherentes según el estado del campo',
+      'No garantiza acceso automático a otros servicios',
+      'Duración: 60-90 minutos (virtual o presencial)',
+    ],
+    requiresEvaluation: false,
+    category: 'personal',
+    ctaText: 'Solicitar Evaluación',
+    featured: true,
+  },
+  {
+    id: 'reiki-energy-quantum',
+    name: 'Reiki Energy Quantum®️',
+    tagline: 'Reordenamiento energético cuántico',
+    description: 'Intervención de reordenamiento energético operando en frecuencias cuánticas. Única herramienta que NO requiere evaluación previa obligatoria.',
+    bullets: [
+      'Reordenamiento del campo energético en capas cuánticas',
+      'No requiere evaluación previa (excepción del sistema)',
+      'Protocolo de 3 a 5 sesiones según el caso',
+      'Virtual o presencial',
+      'No es Reiki tradicional: metodología propia cuantizada',
+    ],
+    requiresEvaluation: false,
+    category: 'personal',
+    ctaText: 'Reservar Sesión',
+  },
+  {
+    id: 'constelaciones-familiares',
+    name: 'Constelaciones Familiares Cuánticas Estelares S.L.C®️',
+    tagline: 'Reordenamiento del campo informacional familiar',
+    description: 'Intervención en el campo informacional de sistemas familiares sin dramatización, sin exposición pública, sin sugestión. Opera en capas informacionales profundas.',
+    bullets: [
+      'Sin sesiones grupales ni exposición pública',
+      'Sin psicodrama ni representaciones',
+      'Lectura y reordenamiento del campo informacional familiar',
+      'Requiere Evaluación Energética S.L.C®️ previa',
+      'Formato individual o privado exclusivamente',
+    ],
+    requiresEvaluation: true,
+    category: 'personal',
+    ctaText: 'Solicitar Acceso',
+    restrictions: ['Requiere Evaluación Energética S.L.C®️ previa obligatoria'],
+  },
+  {
+    id: 'genetic-quanty',
+    name: 'GENETIC QUANTY®️',
+    tagline: 'Intervención informacional por capas genéticas',
+    description: 'Tecnología de camas cuánticas para intervención en capas genéticas informacionales. Alta complejidad operativa. Acceso restringido bajo evaluación exhaustiva.',
+    bullets: [
+      'Intervención en capas genéticas informacionales',
+      'Uso de tecnología de camas cuánticas',
+      'Protocolo de sesiones según evaluación (4-12 sesiones)',
+      'Requiere evaluación previa y solicitud de acceso aprobada',
+      'Derecho de admisión estricto',
+    ],
+    requiresEvaluation: true,
+    category: 'personal',
+    ctaText: 'Solicitar Acceso',
+    restrictions: [
+      'Requiere Evaluación Energética S.L.C®️ previa',
+      'Solicitud de acceso sujeta a aprobación',
+      'Derecho de admisión reservado',
+    ],
+  },
+  {
+    id: 'biolink-animal',
+    name: 'BioLink Animal S.L.C®️',
+    tagline: 'Lectura informacional del campo animal',
+    description: 'Lectura del campo informacional de animales sin mediumnidad, sin psiquismo, sin humanización. No reemplaza atención veterinaria ni tratamientos médicos.',
+    bullets: [
+      'Lectura informacional del campo energético animal',
+      'NO es comunicación telepática ni mediúmnica',
+      'NO reemplaza atención veterinaria',
+      'Requiere que el animal esté bajo supervisión veterinaria',
+      'Formulario de ingreso obligatorio con datos del responsable',
+    ],
+    requiresEvaluation: true,
+    category: 'animal',
+    ctaText: 'Completar Formulario',
+    restrictions: [
+      'Requiere supervisión veterinaria activa',
+      'No reemplaza diagnóstico ni tratamiento veterinario',
+      'Formulario de evaluación previa obligatorio',
+    ],
+  },
+  {
+    id: 'biolink-habitat',
+    name: 'BioLink Habitat & Mobility S.L.C®️',
+    tagline: 'Intervención informacional en espacios y activos corporativos',
+    description: 'Servicio premium corporativo de intervención informacional en espacios habitables, vehículos y activos. NO es limpieza energética. NO reemplaza ingeniería, arquitectura ni mecánica.',
+    bullets: [
+      'Aplicable a espacios habitables, vehículos, maquinaria',
+      'No es limpieza energética ni feng shui',
+      'No reemplaza ingeniería, arquitectura, mecánica ni mantenimiento',
+      'Servicio intangible: sin garantía de resultados económicos',
+      'Formulario de compatibilidad corporativa obligatorio',
+    ],
+    requiresEvaluation: true,
+    category: 'corporate',
+    ctaText: 'Solicitar Compatibilidad',
+    restrictions: [
+      'Solo para entidades corporativas verificables',
+      'Formulario de compatibilidad previo obligatorio',
+      'Sin garantía de resultados económicos ni operativos',
+    ],
+  },
+  {
+    id: 'advanced-quantum-research',
+    name: 'Advanced Quantum Research S.L.C®️',
+    tagline: 'Investigación de casos excepcionales',
+    description: 'Servicio de investigación para casos de alta complejidad informacional. Acceso bajo entrevista previa. Confidencialidad estricta. Solo para situaciones excepcionales fuera del marco estándar.',
+    bullets: [
+      'Investigación de casos excepcionales de alta complejidad',
+      'Acceso solo bajo entrevista previa aprobada',
+      'Confidencialidad absoluta',
+      'Sin garantía de aceptación del caso',
+      'Derecho de admisión absoluto',
+    ],
+    requiresEvaluation: true,
+    category: 'research',
+    ctaText: 'Solicitar Entrevista',
+    restrictions: [
+      'Casos excepcionales únicamente',
+      'Entrevista previa obligatoria sin garantía de aceptación',
+      'Derecho de admisión absoluto',
+    ],
+  },
+  {
+    id: 'reordenamiento-coherencia',
+    name: 'Reordenamiento y Alineamiento de Coherencia Energética S.L.C®️',
+    tagline: 'Intervención estructural post-evaluación',
+    description: 'Intervención de reordenamiento estructural del campo energético. Solo disponible si fue indicado como resultado de la Evaluación Energética S.L.C®️. No es autoservicio.',
+    bullets: [
+      'Intervención estructural profunda del campo energético',
+      'Solo disponible si fue indicado en Evaluación Energética',
+      'No se puede solicitar directamente',
+      'Protocolo personalizado según evaluación',
+      'Seguimiento definido según el caso',
+    ],
+    requiresEvaluation: true,
+    category: 'personal',
+    ctaText: 'Consultar Disponibilidad',
+    restrictions: [
+      'Solo disponible si fue indicado en Evaluación Energética S.L.C®️',
+      'No se puede reservar sin indicación previa',
+    ],
+  },
+];
+
+export function getServiceById(id: string): Service | undefined {
+  return SERVICES.find(s => s.id === id);
+}
+
+export function getServicesByCategory(category: Service['category']): Service[] {
+  return SERVICES.filter(s => s.category === category);
+}

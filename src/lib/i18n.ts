@@ -1,0 +1,313 @@
+export type Language = 'es' | 'en' | 'pt';
+
+export interface Translations {
+  hero: {
+    title: string;
+    subtitle: string;
+    ctaEvaluation: string;
+    ctaVideo: string;
+    scrollLabel: string;
+  };
+  header: {
+    services: string;
+    pricing: string;
+    protocol: string;
+    faq: string;
+    contact: string;
+    requestEvaluation: string;
+  };
+  services: {
+    sectionTitle: string;
+    sectionSubtitle: string;
+    sectionDescription: string;
+    priceConfirmEvaluation: string;
+    priceConfirmWhatsApp: string;
+    featured: string;
+    viewDetails: string;
+    accessNote: string;
+    amount: string;
+  };
+  pricing: {
+    title: string;
+    subtitle: string;
+    intro: string;
+    paymentMethods: string;
+    importantNotes: string;
+    note1: string;
+    note2: string;
+    note3: string;
+    viewPaymentMethods: string;
+  };
+  protocol: {
+    title: string;
+    subtitle: string;
+    readProtocol: string;
+    viewSummary: string;
+  };
+  faq: {
+    title: string;
+    subtitle: string;
+  };
+  footer: {
+    brand: string;
+    brandSubtitle: string;
+    legal: string;
+    contact: string;
+    terms: string;
+    privacy: string;
+    cookies: string;
+    disclaimer: string;
+    refunds: string;
+    cookieSettings: string;
+    email: string;
+    whatsapp: string;
+    copyright: string;
+  };
+  common: {
+    learnMore: string;
+    close: string;
+    accept: string;
+    reject: string;
+    configure: string;
+    copy: string;
+    copied: string;
+    loading: string;
+    error: string;
+    success: string;
+  };
+}
+
+export const translations: Record<Language, Translations> = {
+  es: {
+    hero: {
+      title: 'Descubrí el Poder del Sistema de Luz Cuántica',
+      subtitle: 'Estructura técnica de transformación consciente. Arquitectura matriz cerrada, protocolos definidos, límites claros.',
+      ctaEvaluation: 'Solicitar Evaluación Energética',
+      ctaVideo: 'Ver Presentación',
+      scrollLabel: 'Explorar',
+    },
+    header: {
+      services: 'Servicios',
+      pricing: 'Precios',
+      protocol: 'Protocolo',
+      faq: 'FAQ',
+      contact: 'Contacto',
+      requestEvaluation: 'Solicitar Evaluación',
+    },
+    services: {
+      sectionTitle: 'Un catálogo de intervención con criterios de acceso.',
+      sectionSubtitle: 'Servicios del sistema',
+      sectionDescription: 'La Evaluación Energética es el punto de partida para determinar compatibilidad y trazar el protocolo coherente. La única excepción de compra directa es Reiki Energy Quantum.',
+      priceConfirmEvaluation: 'Precio a confirmar tras evaluación',
+      priceConfirmWhatsApp: 'Precio a confirmar por WhatsApp',
+      featured: 'Destacado',
+      viewDetails: 'Ver detalle',
+      accessNote: 'Acceso sujeto a Evaluación previa y derecho de admisión. No hay garantías.',
+      amount: 'Monto',
+    },
+    pricing: {
+      title: 'Estructura de Inversión',
+      subtitle: 'Información de pagos y medios habilitados',
+      intro: 'El monto y medio de pago se confirma por WhatsApp tras completar el formulario correspondiente. Consulta por región y disponibilidad.',
+      paymentMethods: 'Medios de Pago Habilitados',
+      importantNotes: 'Notas Importantes',
+      note1: 'Reiki Energy Quantum es la única reserva directa (sin evaluación previa obligatoria).',
+      note2: 'El resto de servicios requieren Evaluación Energética y están sujetos a derecho de admisión.',
+      note3: 'Todos los pagos son NO reembolsables. Al solicitar aceptás el Protocolo de Ingreso.',
+      viewPaymentMethods: 'Ver Medios de Pago',
+    },
+    protocol: {
+      title: 'Protocolo de Ingreso',
+      subtitle: 'Estructura operativa y condiciones de acceso',
+      readProtocol: 'Leer Protocolo Completo',
+      viewSummary: 'Ver Resumen',
+    },
+    faq: {
+      title: 'Preguntas Frecuentes',
+      subtitle: 'Respuestas a las consultas más comunes',
+    },
+    footer: {
+      brand: 'Sistema Luz Cuántica',
+      brandSubtitle: 'S.L.C.',
+      legal: 'Legal',
+      contact: 'Contacto',
+      terms: 'Términos y Condiciones',
+      privacy: 'Política de Privacidad',
+      cookies: 'Política de Cookies',
+      disclaimer: 'Disclaimer',
+      refunds: 'Política de Reembolsos',
+      cookieSettings: 'Configuración de Cookies',
+      email: 'Email',
+      whatsapp: 'WhatsApp',
+      copyright: 'Todos los derechos reservados.',
+    },
+    common: {
+      learnMore: 'Más información',
+      close: 'Cerrar',
+      accept: 'Aceptar',
+      reject: 'Rechazar',
+      configure: 'Configurar',
+      copy: 'Copiar',
+      copied: 'Copiado',
+      loading: 'Cargando...',
+      error: 'Error',
+      success: 'Éxito',
+    },
+  },
+  en: {
+    hero: {
+      title: 'Discover the Power of the Quantum Light System',
+      subtitle: 'Technical structure of conscious transformation. Closed matrix architecture, defined protocols, clear boundaries.',
+      ctaEvaluation: 'Request Energy Evaluation',
+      ctaVideo: 'Watch Presentation',
+      scrollLabel: 'Explore',
+    },
+    header: {
+      services: 'Services',
+      pricing: 'Pricing',
+      protocol: 'Protocol',
+      faq: 'FAQ',
+      contact: 'Contact',
+      requestEvaluation: 'Request Evaluation',
+    },
+    services: {
+      sectionTitle: 'An intervention catalog with access criteria.',
+      sectionSubtitle: 'System services',
+      sectionDescription: 'Energy Evaluation is the starting point to determine compatibility and outline the coherent protocol. The only direct purchase exception is Reiki Energy Quantum.',
+      priceConfirmEvaluation: 'Price to be confirmed after evaluation',
+      priceConfirmWhatsApp: 'Price to be confirmed via WhatsApp',
+      featured: 'Featured',
+      viewDetails: 'View details',
+      accessNote: 'Access subject to prior Evaluation and right of admission. No guarantees.',
+      amount: 'Amount',
+    },
+    pricing: {
+      title: 'Investment Structure',
+      subtitle: 'Payment information and enabled methods',
+      intro: 'The amount and payment method are confirmed via WhatsApp after completing the corresponding form. Inquire by region and availability.',
+      paymentMethods: 'Enabled Payment Methods',
+      importantNotes: 'Important Notes',
+      note1: 'Reiki Energy Quantum is the only direct booking (no mandatory prior evaluation).',
+      note2: 'All other services require Energy Evaluation and are subject to right of admission.',
+      note3: 'All payments are NON-refundable. By requesting, you accept the Entry Protocol.',
+      viewPaymentMethods: 'View Payment Methods',
+    },
+    protocol: {
+      title: 'Entry Protocol',
+      subtitle: 'Operational structure and access conditions',
+      readProtocol: 'Read Full Protocol',
+      viewSummary: 'View Summary',
+    },
+    faq: {
+      title: 'Frequently Asked Questions',
+      subtitle: 'Answers to the most common questions',
+    },
+    footer: {
+      brand: 'Quantum Light System',
+      brandSubtitle: 'Q.L.S.',
+      legal: 'Legal',
+      contact: 'Contact',
+      terms: 'Terms and Conditions',
+      privacy: 'Privacy Policy',
+      cookies: 'Cookie Policy',
+      disclaimer: 'Disclaimer',
+      refunds: 'Refund Policy',
+      cookieSettings: 'Cookie Settings',
+      email: 'Email',
+      whatsapp: 'WhatsApp',
+      copyright: 'All rights reserved.',
+    },
+    common: {
+      learnMore: 'Learn more',
+      close: 'Close',
+      accept: 'Accept',
+      reject: 'Reject',
+      configure: 'Configure',
+      copy: 'Copy',
+      copied: 'Copied',
+      loading: 'Loading...',
+      error: 'Error',
+      success: 'Success',
+    },
+  },
+  pt: {
+    hero: {
+      title: 'Descubra o Poder do Sistema de Luz Quântica',
+      subtitle: 'Estrutura técnica de transformação consciente. Arquitetura matricial fechada, protocolos definidos, limites claros.',
+      ctaEvaluation: 'Solicitar Avaliação Energética',
+      ctaVideo: 'Ver Apresentação',
+      scrollLabel: 'Explorar',
+    },
+    header: {
+      services: 'Serviços',
+      pricing: 'Preços',
+      protocol: 'Protocolo',
+      faq: 'FAQ',
+      contact: 'Contato',
+      requestEvaluation: 'Solicitar Avaliação',
+    },
+    services: {
+      sectionTitle: 'Um catálogo de intervenção com critérios de acesso.',
+      sectionSubtitle: 'Serviços do sistema',
+      sectionDescription: 'A Avaliação Energética é o ponto de partida para determinar compatibilidade e traçar o protocolo coerente. A única exceção de compra direta é Reiki Energy Quantum.',
+      priceConfirmEvaluation: 'Preço a confirmar após avaliação',
+      priceConfirmWhatsApp: 'Preço a confirmar via WhatsApp',
+      featured: 'Destaque',
+      viewDetails: 'Ver detalhes',
+      accessNote: 'Acesso sujeito a Avaliação prévia e direito de admissão. Sem garantias.',
+      amount: 'Valor',
+    },
+    pricing: {
+      title: 'Estrutura de Investimento',
+      subtitle: 'Informação de pagamentos e métodos habilitados',
+      intro: 'O valor e método de pagamento são confirmados via WhatsApp após completar o formulário correspondente. Consulte por região e disponibilidade.',
+      paymentMethods: 'Métodos de Pagamento Habilitados',
+      importantNotes: 'Notas Importantes',
+      note1: 'Reiki Energy Quantum é a única reserva direta (sem avaliação prévia obrigatória).',
+      note2: 'Os demais serviços requerem Avaliação Energética e estão sujeitos ao direito de admissão.',
+      note3: 'Todos os pagamentos são NÃO reembolsáveis. Ao solicitar, você aceita o Protocolo de Ingresso.',
+      viewPaymentMethods: 'Ver Métodos de Pagamento',
+    },
+    protocol: {
+      title: 'Protocolo de Ingresso',
+      subtitle: 'Estrutura operacional e condições de acesso',
+      readProtocol: 'Ler Protocolo Completo',
+      viewSummary: 'Ver Resumo',
+    },
+    faq: {
+      title: 'Perguntas Frequentes',
+      subtitle: 'Respostas às perguntas mais comuns',
+    },
+    footer: {
+      brand: 'Sistema Luz Quântica',
+      brandSubtitle: 'S.L.Q.',
+      legal: 'Legal',
+      contact: 'Contato',
+      terms: 'Termos e Condições',
+      privacy: 'Política de Privacidade',
+      cookies: 'Política de Cookies',
+      disclaimer: 'Aviso Legal',
+      refunds: 'Política de Reembolsos',
+      cookieSettings: 'Configurações de Cookies',
+      email: 'Email',
+      whatsapp: 'WhatsApp',
+      copyright: 'Todos os direitos reservados.',
+    },
+    common: {
+      learnMore: 'Saiba mais',
+      close: 'Fechar',
+      accept: 'Aceitar',
+      reject: 'Rejeitar',
+      configure: 'Configurar',
+      copy: 'Copiar',
+      copied: 'Copiado',
+      loading: 'Carregando...',
+      error: 'Erro',
+      success: 'Sucesso',
+    },
+  },
+};
+
+export function getTranslations(lang: Language): Translations {
+  return translations[lang] || translations.es;
+}
