@@ -28,7 +28,7 @@ export function VideoShowcase() {
                 Una arquitectura cerrada, diseñada para alta exigencia.
               </h2>
               <p className="mt-3 text-sm sm:text-base text-white/70 leading-relaxed">
-                Conocé el marco operativo del Sistema Luz Cuántica®️: criterios de evaluación, protocolos definidos y límites claros.
+                Conocé el marco operativo del Sistema Luz Cuántica: criterios de evaluación, protocolos definidos y límites claros.
                 Sin dogmas, sin promesas, sin dependencia.
               </p>
 
@@ -75,7 +75,7 @@ export function VideoShowcase() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-5xl">
           <DialogHeader>
-            <DialogTitle>Presentación del Sistema Luz Cuántica®️</DialogTitle>
+            <DialogTitle>Presentación del Sistema Luz Cuántica</DialogTitle>
           </DialogHeader>
 
           <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/10 bg-black">

@@ -32,7 +32,7 @@ export function WhatIs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            ¿Qué es el Sistema Luz Cuántica®️?
+            ¿Qué es el Sistema Luz Cuántica?
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
             Una estructura de transformación consciente que opera bajo protocolos técnicos rigurosos, sin misticismo ni promesas infundadas.

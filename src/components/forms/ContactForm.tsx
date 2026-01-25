@@ -29,7 +29,7 @@ interface ContactFormProps {
   regionLabel?: string;
 }
 
-export function ContactForm({ onSuccess, serviceLabel = 'Evaluación Energética S.L.C®️', regionLabel }: ContactFormProps) {
+export function ContactForm({ onSuccess, serviceLabel = 'Evaluación Energética S.L.C', regionLabel }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const {

@@ -20,7 +20,7 @@ export default function ReembolsosPage() {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-3">1. Política General</h2>
             <p>
-              Todos los pagos realizados por servicios del Sistema Luz Cuántica®️ son definitivos y NO reembolsables bajo ninguna circunstancia.
+              Todos los pagos realizados por servicios del Sistema Luz Cuántica son definitivos y NO reembolsables bajo ninguna circunstancia.
             </p>
           </section>
 
@@ -46,7 +46,7 @@ export default function ReembolsosPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">5. Evaluación Energética S.L.C®️</h2>
+            <h2 className="text-2xl font-semibold text-white mb-3">5. Evaluación Energética S.L.C</h2>
             <p>
               El pago de la Evaluación Energética NO garantiza acceso automático a otros servicios del sistema. La evaluación es un servicio en sí mismo, no reembolsable.
             </p>

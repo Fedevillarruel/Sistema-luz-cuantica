@@ -240,5 +240,5 @@ Solo pídeme y continuamos desde aquí. El proyecto está 100% funcional como ba
 
 ---
 
-**Sistema Luz Cuántica®️** - Landing Page v1.0
+**Sistema Luz Cuántica** - Landing Page v1.0
 Generada: Enero 2026

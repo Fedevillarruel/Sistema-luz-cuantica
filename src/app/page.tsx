@@ -91,7 +91,7 @@ export default function HomePage() {
             <div className="max-w-2xl mx-auto">
               <h2 className="text-4xl font-bold text-white mb-4 text-center">Contacto</h2>
               <p className="text-gray-400 mb-8 text-center">
-                Completa el formulario para solicitar tu Evaluación Energética S.L.C®️
+                Completa el formulario para solicitar tu Evaluación Energética S.L.C
               </p>
               <div className="bg-quantum-dark p-8 rounded-lg border border-quantum-cyan/30">
                 <ContactForm onSuccess={() => setEvaluationModalOpen(false)} />
@@ -111,7 +111,7 @@ export default function HomePage() {
       <Dialog open={evaluationModalOpen} onOpenChange={setEvaluationModalOpen}>
         <DialogContent className="max-w-2xl">
           <DialogHeader>
-            <DialogTitle>Solicitar Evaluación Energética S.L.C®️</DialogTitle>
+            <DialogTitle>Solicitar Evaluación Energética S.L.C</DialogTitle>
           </DialogHeader>
           <ContactForm onSuccess={() => setEvaluationModalOpen(false)} />
         </DialogContent>

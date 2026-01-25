@@ -232,7 +232,7 @@ function getCarouselSlides(service: Service): Array<{ title: string; subtitle: s
       ];
     case 'reiki-energy-quantum':
       return [
-        { title: 'Reiki Energy Quantum®️', subtitle: 'Reserva directa (sin evaluación obligatoria)' },
+        { title: 'Reiki Energy Quantum', subtitle: 'Reserva directa (sin evaluación obligatoria)' },
         { title: 'Formato', subtitle: 'Virtual o presencial' },
         { title: 'Protocolo', subtitle: '3 a 5 sesiones según el caso' },
       ];

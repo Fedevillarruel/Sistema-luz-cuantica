@@ -1,8 +1,8 @@
-# SISTEMA LUZ CUÁNTICA®️ - RESUMEN EJECUTIVO
+# SISTEMA LUZ CUÁNTICA - RESUMEN EJECUTIVO
 
 ## ✅ PROYECTO COMPLETADO
 
-He generado una **landing page profesional, moderna y completamente funcional** para el Sistema Luz Cuántica®️.
+He generado una **landing page profesional, moderna y completamente funcional** para el Sistema Luz Cuántica.
 
 ### 🎯 Lo que tienes ahora:
 
@@ -223,5 +223,5 @@ Solo pídeme el componente específico que necesites.
 
 ---
 
-**Sistema Luz Cuántica®️** - Landing Page Profesional v1.0
+**Sistema Luz Cuántica** - Landing Page Profesional v1.0
 Generada por Claude Sonnet 4.5 - Enero 2026

@@ -29,7 +29,7 @@ const PROTOCOL_POINTS = [
   },
 ];
 
-const FULL_PROTOCOL = `Protocolo de Ingreso — Sistema Luz Cuántica®️
+const FULL_PROTOCOL = `Protocolo de Ingreso — Sistema Luz Cuántica
 
 1) Marco del servicio
 - Se trabaja sobre planos energéticos e informacionales.

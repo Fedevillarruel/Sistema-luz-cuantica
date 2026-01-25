@@ -14,7 +14,7 @@ export default function DisclaimerPage() {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-3">NO Somos Servicios de Salud</h2>
             <p className="font-semibold text-quantum-gold">
-              Sistema Luz Cuántica®️ NO es un servicio médico, psicológico, psiquiátrico ni de salud convencional.
+              Sistema Luz Cuántica NO es un servicio médico, psicológico, psiquiátrico ni de salud convencional.
             </p>
             <p className="mt-2">
               NO diagnosticamos enfermedades. NO prescribimos medicamentos ni tratamientos. NO reemplazamos atención médica, psicológica ni psiquiátrica profesional.
@@ -53,14 +53,14 @@ export default function DisclaimerPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">BioLink Animal S.L.C®️</h2>
+            <h2 className="text-2xl font-semibold text-white mb-3">BioLink Animal S.L.C</h2>
             <p>
               NO reemplaza atención veterinaria. Requiere que el animal esté bajo supervisión veterinaria activa. NO es comunicación telepática ni mediúmnica.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold text-white mb-3">BioLink Habitat & Mobility S.L.C®️</h2>
+            <h2 className="text-2xl font-semibold text-white mb-3">BioLink Habitat & Mobility S.L.C</h2>
             <p>
               NO es limpieza energética ni feng shui. NO reemplaza ingeniería, arquitectura, mecánica ni mantenimiento profesional. Servicio intangible sin garantía de resultados económicos ni operativos.
             </p>

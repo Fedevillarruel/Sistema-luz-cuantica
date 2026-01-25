@@ -3,9 +3,9 @@ import type { Service } from '@/types';
 export const SERVICES: Service[] = [
   {
     id: 'evaluacion-energetica',
-    name: 'Evaluación Energética S.L.C®️',
+    name: 'Evaluación Energética S.L.C',
     tagline: 'El punto de partida oficial del sistema',
-    description: 'Análisis informacional del campo energético individual para determinar compatibilidad con el Sistema Luz Cuántica®️ y definir las herramientas coherentes según el estado del campo.',
+    description: 'Análisis informacional del campo energético individual para determinar compatibilidad con el Sistema Luz Cuántica y definir las herramientas coherentes según el estado del campo.',
     bullets: [
       'Mapeo inicial del campo informacional',
       'Determinación de aptitud para ingreso al sistema',
@@ -20,7 +20,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'reiki-energy-quantum',
-    name: 'Reiki Energy Quantum®️',
+    name: 'Reiki Energy Quantum',
     tagline: 'Reordenamiento energético cuántico',
     description: 'Intervención de reordenamiento energético operando en frecuencias cuánticas. Única herramienta que NO requiere evaluación previa obligatoria.',
     bullets: [
@@ -36,24 +36,24 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'constelaciones-familiares',
-    name: 'Constelaciones Familiares Cuánticas Estelares S.L.C®️',
+    name: 'Constelaciones Familiares Cuánticas Estelares S.L.C',
     tagline: 'Reordenamiento del campo informacional familiar',
     description: 'Intervención en el campo informacional de sistemas familiares sin dramatización, sin exposición pública, sin sugestión. Opera en capas informacionales profundas.',
     bullets: [
       'Sin sesiones grupales ni exposición pública',
       'Sin psicodrama ni representaciones',
       'Lectura y reordenamiento del campo informacional familiar',
-      'Requiere Evaluación Energética S.L.C®️ previa',
+      'Requiere Evaluación Energética S.L.C previa',
       'Formato individual o privado exclusivamente',
     ],
     requiresEvaluation: true,
     category: 'personal',
     ctaText: 'Solicitar Acceso',
-    restrictions: ['Requiere Evaluación Energética S.L.C®️ previa obligatoria'],
+    restrictions: ['Requiere Evaluación Energética S.L.C previa obligatoria'],
   },
   {
     id: 'genetic-quanty',
-    name: 'GENETIC QUANTY®️',
+    name: 'GENETIC QUANTY',
     tagline: 'Intervención informacional por capas genéticas',
     description: 'Tecnología de camas cuánticas para intervención en capas genéticas informacionales. Alta complejidad operativa. Acceso restringido bajo evaluación exhaustiva.',
     bullets: [
@@ -67,14 +67,14 @@ export const SERVICES: Service[] = [
     category: 'personal',
     ctaText: 'Solicitar Acceso',
     restrictions: [
-      'Requiere Evaluación Energética S.L.C®️ previa',
+      'Requiere Evaluación Energética S.L.C previa',
       'Solicitud de acceso sujeta a aprobación',
       'Derecho de admisión reservado',
     ],
   },
   {
     id: 'biolink-animal',
-    name: 'BioLink Animal S.L.C®️',
+    name: 'BioLink Animal S.L.C',
     tagline: 'Lectura informacional del campo animal',
     description: 'Lectura del campo informacional de animales sin mediumnidad, sin psiquismo, sin humanización. No reemplaza atención veterinaria ni tratamientos médicos.',
     bullets: [
@@ -95,7 +95,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'biolink-habitat',
-    name: 'BioLink Habitat & Mobility S.L.C®️',
+    name: 'BioLink Habitat & Mobility S.L.C',
     tagline: 'Intervención informacional en espacios y activos corporativos',
     description: 'Servicio premium corporativo de intervención informacional en espacios habitables, vehículos y activos. NO es limpieza energética. NO reemplaza ingeniería, arquitectura ni mecánica.',
     bullets: [
@@ -116,7 +116,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'advanced-quantum-research',
-    name: 'Advanced Quantum Research S.L.C®️',
+    name: 'Advanced Quantum Research S.L.C',
     tagline: 'Investigación de casos excepcionales',
     description: 'Servicio de investigación para casos de alta complejidad informacional. Acceso bajo entrevista previa. Confidencialidad estricta. Solo para situaciones excepcionales fuera del marco estándar.',
     bullets: [
@@ -137,9 +137,9 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'reordenamiento-coherencia',
-    name: 'Reordenamiento y Alineamiento de Coherencia Energética S.L.C®️',
+    name: 'Reordenamiento y Alineamiento de Coherencia Energética S.L.C',
     tagline: 'Intervención estructural post-evaluación',
-    description: 'Intervención de reordenamiento estructural del campo energético. Solo disponible si fue indicado como resultado de la Evaluación Energética S.L.C®️. No es autoservicio.',
+    description: 'Intervención de reordenamiento estructural del campo energético. Solo disponible si fue indicado como resultado de la Evaluación Energética S.L.C. No es autoservicio.',
     bullets: [
       'Intervención estructural profunda del campo energético',
       'Solo disponible si fue indicado en Evaluación Energética',
@@ -151,7 +151,7 @@ export const SERVICES: Service[] = [
     category: 'personal',
     ctaText: 'Consultar Disponibilidad',
     restrictions: [
-      'Solo disponible si fue indicado en Evaluación Energética S.L.C®️',
+      'Solo disponible si fue indicado en Evaluación Energética S.L.C',
       'No se puede reservar sin indicación previa',
     ],
   },

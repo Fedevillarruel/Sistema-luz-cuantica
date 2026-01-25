@@ -14,7 +14,7 @@ export default function TerminosPage() {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-3">1. Aceptación de Términos</h2>
             <p>
-              Al acceder y utilizar los servicios del Sistema Luz Cuántica®️ (en adelante "S.L.C."), usted acepta estar vinculado por estos Términos y Condiciones. Si no está de acuerdo, no utilice nuestros servicios.
+              Al acceder y utilizar los servicios del Sistema Luz Cuántica (en adelante "S.L.C."), usted acepta estar vinculado por estos Términos y Condiciones. Si no está de acuerdo, no utilice nuestros servicios.
             </p>
           </section>
 
@@ -31,7 +31,7 @@ export default function TerminosPage() {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-3">3. Evaluación Previa Obligatoria</h2>
             <p>
-              El acceso a la mayoría de los servicios del sistema requiere Evaluación Energética S.L.C®️ previa, excepto Reiki Energy Quantum®️.
+              El acceso a la mayoría de los servicios del sistema requiere Evaluación Energética S.L.C previa, excepto Reiki Energy Quantum.
             </p>
             <p className="mt-2">
               La Evaluación NO garantiza acceso automático a otros servicios. El núcleo central bajo conducción de Sergio Andrés López Madeo determina aptitud, herramientas coherentes y decisión de continuidad.
@@ -62,7 +62,7 @@ export default function TerminosPage() {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-3">7. Propiedad Intelectual</h2>
             <p>
-              "Sistema Luz Cuántica®️", "S.L.C®️", "Reiki Energy Quantum®️", "GENETIC QUANTY®️", "BioLink Animal S.L.C®️", "BioLink Habitat & Mobility S.L.C®️" y demás marcas son propiedad exclusiva.
+              "Sistema Luz Cuántica", "S.L.C", "Reiki Energy Quantum", "GENETIC QUANTY", "BioLink Animal S.L.C", "BioLink Habitat & Mobility S.L.C" y demás marcas son propiedad exclusiva.
             </p>
           </section>
 

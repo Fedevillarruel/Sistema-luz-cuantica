@@ -5,12 +5,12 @@ Puedes editarlos directamente en ese archivo.
 
 ---
 
-## 1️⃣ EVALUACIÓN ENERGÉTICA S.L.C®️
+## 1️⃣ EVALUACIÓN ENERGÉTICA S.L.C
 
 **Tagline**: El punto de partida oficial del sistema
 
 **Descripción**:
-Análisis informacional del campo energético individual para determinar compatibilidad con el Sistema Luz Cuántica®️ y definir las herramientas coherentes según el estado del campo.
+Análisis informacional del campo energético individual para determinar compatibilidad con el Sistema Luz Cuántica y definir las herramientas coherentes según el estado del campo.
 
 **Bullets**:
 - Mapeo inicial del campo informacional
@@ -26,7 +26,7 @@ Análisis informacional del campo energético individual para determinar compati
 
 ---
 
-## 2️⃣ REIKI ENERGY QUANTUM®️
+## 2️⃣ REIKI ENERGY QUANTUM
 
 **Tagline**: Reordenamiento energético cuántico
 
@@ -46,7 +46,7 @@ Intervención de reordenamiento energético operando en frecuencias cuánticas. 
 
 ---
 
-## 3️⃣ CONSTELACIONES FAMILIARES CUÁNTICAS ESTELARES S.L.C®️
+## 3️⃣ CONSTELACIONES FAMILIARES CUÁNTICAS ESTELARES S.L.C
 
 **Tagline**: Reordenamiento del campo informacional familiar
 
@@ -57,18 +57,18 @@ Intervención en el campo informacional de sistemas familiares sin dramatizació
 - Sin sesiones grupales ni exposición pública
 - Sin psicodrama ni representaciones
 - Lectura y reordenamiento del campo informacional familiar
-- Requiere Evaluación Energética S.L.C®️ previa
+- Requiere Evaluación Energética S.L.C previa
 - Formato individual o privado exclusivamente
 
 **Categoría**: Personal
 **Requiere Evaluación Previa**: ✅ SÍ
 **CTA**: "Solicitar Acceso"
 **Restricciones**:
-- Requiere Evaluación Energética S.L.C®️ previa obligatoria
+- Requiere Evaluación Energética S.L.C previa obligatoria
 
 ---
 
-## 4️⃣ GENETIC QUANTY®️
+## 4️⃣ GENETIC QUANTY
 
 **Tagline**: Intervención informacional por capas genéticas
 
@@ -86,13 +86,13 @@ Tecnología de camas cuánticas para intervención en capas genéticas informaci
 **Requiere Evaluación Previa**: ✅ SÍ
 **CTA**: "Solicitar Acceso"
 **Restricciones**:
-- Requiere Evaluación Energética S.L.C®️ previa
+- Requiere Evaluación Energética S.L.C previa
 - Solicitud de acceso sujeta a aprobación
 - Derecho de admisión reservado
 
 ---
 
-## 5️⃣ BIOLINK ANIMAL S.L.C®️
+## 5️⃣ BIOLINK ANIMAL S.L.C
 
 **Tagline**: Lectura informacional del campo animal
 
@@ -116,7 +116,7 @@ Lectura del campo informacional de animales sin mediumnidad, sin psiquismo, sin 
 
 ---
 
-## 6️⃣ BIOLINK HABITAT & MOBILITY S.L.C®️
+## 6️⃣ BIOLINK HABITAT & MOBILITY S.L.C
 
 **Tagline**: Intervención informacional en espacios y activos corporativos
 
@@ -140,7 +140,7 @@ Servicio premium corporativo de intervención informacional en espacios habitabl
 
 ---
 
-## 7️⃣ ADVANCED QUANTUM RESEARCH S.L.C®️
+## 7️⃣ ADVANCED QUANTUM RESEARCH S.L.C
 
 **Tagline**: Investigación de casos excepcionales
 
@@ -164,12 +164,12 @@ Servicio de investigación para casos de alta complejidad informacional. Acceso 
 
 ---
 
-## 8️⃣ REORDENAMIENTO Y ALINEAMIENTO DE COHERENCIA ENERGÉTICA S.L.C®️
+## 8️⃣ REORDENAMIENTO Y ALINEAMIENTO DE COHERENCIA ENERGÉTICA S.L.C
 
 **Tagline**: Intervención estructural post-evaluación
 
 **Descripción**:
-Intervención de reordenamiento estructural del campo energético. Solo disponible si fue indicado como resultado de la Evaluación Energética S.L.C®️. No es autoservicio.
+Intervención de reordenamiento estructural del campo energético. Solo disponible si fue indicado como resultado de la Evaluación Energética S.L.C. No es autoservicio.
 
 **Bullets**:
 - Intervención estructural profunda del campo energético
@@ -182,7 +182,7 @@ Intervención de reordenamiento estructural del campo energético. Solo disponib
 **Requiere Evaluación Previa**: ✅ SÍ (Y debe ser indicado)
 **CTA**: "Consultar Disponibilidad"
 **Restricciones**:
-- Solo disponible si fue indicado en Evaluación Energética S.L.C®️
+- Solo disponible si fue indicado en Evaluación Energética S.L.C
 - No se puede reservar sin indicación previa
 
 ---
@@ -243,5 +243,5 @@ Después de editar, el sitio se recarga automáticamente en desarrollo.
 
 ---
 
-**Sistema Luz Cuántica®️** - Configuración de Servicios
+**Sistema Luz Cuántica** - Configuración de Servicios
 Actualizado: Enero 2026

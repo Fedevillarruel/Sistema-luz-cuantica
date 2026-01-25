@@ -18,7 +18,7 @@ const FAQ = [
   },
   {
     q: '¿Qué servicio puedo comprar directamente?',
-    a: 'Reiki Energy Quantum®️ es la única herramienta que puede reservarse sin evaluación previa obligatoria. El resto requiere evaluación y/o aprobación.',
+    a: 'Reiki Energy Quantum es la única herramienta que puede reservarse sin evaluación previa obligatoria. El resto requiere evaluación y/o aprobación.',
   },
   {
     q: '¿Los pagos son reembolsables?',

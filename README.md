@@ -1,6 +1,6 @@
-# Sistema Luz Cuántica®️ - Landing Page
+# Sistema Luz Cuántica - Landing Page
 
-Landing page profesional para el Sistema Luz Cuántica®️ construida con Next.js 14, TypeScript, TailwindCSS y Framer Motion.
+Landing page profesional para el Sistema Luz Cuántica construida con Next.js 14, TypeScript, TailwindCSS y Framer Motion.
 
 ## 🚀 Stack Tecnológico
 
@@ -274,5 +274,5 @@ Para consultas técnicas sobre el código:
 
 ---
 
-**Sistema Luz Cuántica®️** - Marca Registrada
+**Sistema Luz Cuántica** - Marca Registrada
 Última actualización: Enero 2026
