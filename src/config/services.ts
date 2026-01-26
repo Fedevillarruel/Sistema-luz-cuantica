@@ -19,22 +19,6 @@ export const SERVICES: Service[] = [
     featured: true,
   },
   {
-    id: 'reiki-energy-quantum',
-    name: 'Reiki Energy Quantum',
-    tagline: 'Reordenamiento energético cuántico',
-    description: 'Intervención de reordenamiento energético operando en frecuencias cuánticas. Única herramienta que NO requiere evaluación previa obligatoria.',
-    bullets: [
-      'Reordenamiento del campo energético en capas cuánticas',
-      'No requiere evaluación previa (excepción del sistema)',
-      'Protocolo de 3 a 5 sesiones según el caso',
-      'Virtual o presencial',
-      'No es Reiki tradicional: metodología propia cuantizada',
-    ],
-    requiresEvaluation: false,
-    category: 'personal',
-    ctaText: 'Reservar Sesión',
-  },
-  {
     id: 'constelaciones-familiares',
     name: 'Constelaciones Familiares Cuánticas Estelares S.L.C',
     tagline: 'Reordenamiento del campo informacional familiar',
@@ -71,6 +55,22 @@ export const SERVICES: Service[] = [
       'Solicitud de acceso sujeta a aprobación',
       'Derecho de admisión reservado',
     ],
+  },
+  {
+    id: 'reiki-energy-quantum',
+    name: 'Reiki Energy Quantum',
+    tagline: 'Reordenamiento energético cuántico',
+    description: 'Intervención de reordenamiento energético operando en frecuencias cuánticas. Única herramienta que NO requiere evaluación previa obligatoria.',
+    bullets: [
+      'Reordenamiento del campo energético en capas cuánticas',
+      'No requiere evaluación previa (excepción del sistema)',
+      'Protocolo de 3 a 5 sesiones según el caso',
+      'Virtual o presencial',
+      'No es Reiki tradicional: metodología propia cuantizada',
+    ],
+    requiresEvaluation: false,
+    category: 'personal',
+    ctaText: 'Reservar Sesión',
   },
   {
     id: 'biolink-animal',
@@ -116,7 +116,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'advanced-quantum-research',
-    name: 'Advanced Quantum Research S.L.C',
+  name: 'Advenced Quantum Research S.L.C',
     tagline: 'Investigación de casos excepcionales',
     description: 'Servicio de investigación para casos de alta complejidad informacional. Acceso bajo entrevista previa. Confidencialidad estricta. Solo para situaciones excepcionales fuera del marco estándar.',
     bullets: [

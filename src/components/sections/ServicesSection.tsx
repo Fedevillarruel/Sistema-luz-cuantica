@@ -11,14 +11,14 @@ import { useLanguage } from '@/hooks/useLanguage';
 
 // Mapeo de servicios a imágenes
 const SERVICE_IMAGES: Record<string, string> = {
-  'energy-evaluation': '/energy-evaluacion.webp',
+  'evaluacion-energetica': '/energy-evaluacion.webp',
   'reiki-energy-quantum': '/reiki-energy-quantum.webp',
-  'constelaciones': '/constelaciones-familiares.webp',
+  'constelaciones-familiares': '/constelaciones-familiares.webp',
   'genetic-quanty': '/genetic-quanty.webp',
   'biolink-animal': '/biolink-animal.webp',
   'biolink-habitat': '/biolink-habitat-mobility.webp',
-  'coherencia-energetica': '/coherencia-energetica.webp',
-  'advanced-quantum': '/advenced-quantum.webp',
+  'reordenamiento-coherencia': '/coherencia-energetica.webp',
+  'advanced-quantum-research': '/advenced-quantum.webp',
 };
 
 function categoryLabel(category: Service['category']): string {
