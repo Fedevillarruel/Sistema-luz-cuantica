@@ -5,15 +5,12 @@ import { Button } from '@/components/ui/Button';
 import { Play } from 'lucide-react';
 import { useMemo, useState } from 'react';
 
-function getVideoUrl(): string | null {
-  const url = process.env.NEXT_PUBLIC_VIDEO_URL;
-  if (!url) return null;
-  return url;
-}
+const VIDEO_IFRAME_URL =
+  'https://www.youtube.com/embed/CCHiYGJgKEQ?si=G23vnT3KhbC4cNAc';
 
 export function VideoShowcase() {
   const [open, setOpen] = useState(false);
-  const videoUrl = useMemo(() => getVideoUrl(), []);
+  const videoUrl = useMemo(() => VIDEO_IFRAME_URL, []);
 
   return (
     <section className="relative py-16" aria-label="Presentación en video">
@@ -43,7 +40,7 @@ export function VideoShowcase() {
               </div>
 
               <p className="mt-6 text-xs text-white/45">
-                Video configurable vía <code className="font-mono">NEXT_PUBLIC_VIDEO_URL</code>. Si no está configurado, se mostrará un placeholder.
+                Video oficial del Sistema Luz Cuántica.
               </p>
             </div>
 
@@ -79,27 +76,16 @@ export function VideoShowcase() {
           </DialogHeader>
 
           <div className="aspect-video w-full overflow-hidden rounded-lg border border-white/10 bg-black">
-            {videoUrl ? (
-              videoUrl.includes('youtube.com') || videoUrl.includes('vimeo.com') ? (
-                <iframe
-                  className="h-full w-full"
-                  src={videoUrl}
-                  title="Video presentación"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              ) : (
-                <video className="h-full w-full" controls preload="none">
-                  <source src={videoUrl} />
-                  Tu navegador no soporta reproducción de video.
-                </video>
-              )
-            ) : (
-              <div className="h-full w-full flex items-center justify-center text-white/60 text-sm p-6">
-                Configurá <code className="mx-2 font-mono">NEXT_PUBLIC_VIDEO_URL</code> para mostrar el video aquí.
-              </div>
-            )}
+            <iframe
+              className="h-full w-full"
+              width="560"
+              height="315"
+              src={videoUrl}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
           </div>
         </DialogContent>
       </Dialog>

@@ -300,15 +300,25 @@ function ServiceCarousel(props: {
   const canPrev = props.index > 0;
   const canNext = props.index < slides.length - 1;
   const active = slides[props.index] ?? slides[0];
+  const imageSrc = SERVICE_IMAGES[props.service.id] || '/logo.webp';
 
   return (
     <div className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
-      <div className="relative aspect-video w-full bg-[radial-gradient(950px_520px_at_30%_25%,rgba(124,58,237,0.42),transparent_60%),radial-gradient(800px_500px_at_70%_70%,rgba(59,130,246,0.28),transparent_65%),radial-gradient(650px_420px_at_90%_15%,rgba(251,146,60,0.18),transparent_60%)]">
+      <div className="relative aspect-video w-full bg-black">
+        <Image
+          src={imageSrc}
+          alt={props.service.name}
+          fill
+          className="object-cover opacity-85"
+          sizes="(max-width: 768px) 100vw, 800px"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/10" />
+
         <div className="absolute inset-0 grid place-items-center">
           <div className="text-center px-6">
-            <div className="text-xs text-white/60">Slide {props.index + 1} / {slides.length}</div>
+            <div className="text-xs text-white/70">{props.index + 1} / {slides.length}</div>
             <div className="mt-1 text-xl font-semibold text-white">{active?.title}</div>
-            <div className="mt-1 text-sm text-white/70">{active?.subtitle}</div>
+            <div className="mt-1 text-sm text-white/75">{active?.subtitle}</div>
           </div>
         </div>
 
