@@ -24,11 +24,16 @@ export async function detectRegion(): Promise<GeoLocation> {
   // Por ahora, fallback directo a API pública
   
   try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 3500);
+
     const response = await fetch('https://ipapi.co/json/', {
       cache: 'no-store',
+      signal: controller.signal,
     });
+    clearTimeout(timeout);
     
-    if (!response.ok) throw new Error('Geolocation API failed');
+  if (!response.ok) throw new Error('Geolocation API failed');
     
     const data = await response.json();
     const country = data.country_code || 'US';
