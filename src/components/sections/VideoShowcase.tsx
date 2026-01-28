@@ -7,6 +7,7 @@ import { useMemo, useState } from 'react';
 
 const VIDEO_IFRAME_URL =
   'https://www.youtube.com/embed/CCHiYGJgKEQ?si=G23vnT3KhbC4cNAc';
+const VIDEO_THUMB_URL = 'https://img.youtube.com/vi/CCHiYGJgKEQ/maxresdefault.jpg';
 
 export function VideoShowcase() {
   const [open, setOpen] = useState(false);
@@ -46,6 +47,17 @@ export function VideoShowcase() {
 
             <div className="lg:col-span-3 relative">
               <div className="aspect-video w-full bg-[radial-gradient(1200px_600px_at_30%_30%,rgba(124,58,237,0.35),transparent_60%),radial-gradient(900px_600px_at_70%_60%,rgba(59,130,246,0.28),transparent_65%),linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] border-l border-white/10">
+                <div className="absolute inset-0">
+                  {/* YouTube thumbnail preview */}
+                  <img
+                    src={VIDEO_THUMB_URL}
+                    alt="Vista previa del video"
+                    className="h-full w-full object-cover opacity-80"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-black/40" />
+                </div>
                 <button
                   onClick={() => setOpen(true)}
                   className="group absolute inset-0 flex items-center justify-center"

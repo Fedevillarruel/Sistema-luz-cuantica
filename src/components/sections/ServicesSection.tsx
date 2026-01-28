@@ -297,9 +297,7 @@ function ServiceCarousel(props: {
   onNext: () => void;
 }) {
   const slides = getCarouselSlides(props.service);
-  const canPrev = props.index > 0;
-  const canNext = props.index < slides.length - 1;
-  const active = slides[props.index] ?? slides[0];
+  const active = slides[0];
   const imageSrc = SERVICE_IMAGES[props.service.id] || '/logo.webp';
 
   return (
@@ -316,49 +314,8 @@ function ServiceCarousel(props: {
 
         <div className="absolute inset-0 grid place-items-center">
           <div className="text-center px-6">
-            <div className="text-xs text-white/70">{props.index + 1} / {slides.length}</div>
             <div className="mt-1 text-xl font-semibold text-white">{active?.title}</div>
             <div className="mt-1 text-sm text-white/75">{active?.subtitle}</div>
-          </div>
-        </div>
-
-        <div className="absolute inset-x-0 bottom-0 p-4">
-          <div className="flex items-center justify-between gap-3">
-            <button
-              type="button"
-              onClick={props.onPrev}
-              disabled={!canPrev}
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/30 px-4 py-2 text-xs text-white/80 disabled:opacity-40"
-              aria-label="Anterior"
-            >
-              <ChevronLeft className="h-4 w-4" />
-              Anterior
-            </button>
-
-            <div className="flex items-center gap-2">
-              {slides.map((_, i) => (
-                <span
-                  key={i}
-                  className={
-                    'h-1.5 w-6 rounded-full border transition ' +
-                    (i === props.index
-                      ? 'border-quantum-orange/40 bg-quantum-orange/40'
-                      : 'border-white/15 bg-white/10')
-                  }
-                />
-              ))}
-            </div>
-
-            <button
-              type="button"
-              onClick={props.onNext}
-              disabled={!canNext}
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/30 px-4 py-2 text-xs text-white/80 disabled:opacity-40"
-              aria-label="Siguiente"
-            >
-              Siguiente
-              <ChevronRight className="h-4 w-4" />
-            </button>
           </div>
         </div>
       </div>
