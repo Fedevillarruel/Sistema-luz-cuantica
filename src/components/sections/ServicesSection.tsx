@@ -211,7 +211,7 @@ export function ServicesSection(props: {
                   <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button variant="outline" onClick={() => setOpen(false)}>
-                  Cerrar
+                  {t.common.close}
                 </Button>
               </div>
             </div>

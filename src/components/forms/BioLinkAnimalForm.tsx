@@ -11,28 +11,33 @@ import { CountryPhoneInput } from '@/components/ui/CountryPhoneInput';
 import { toast } from 'sonner';
 import { WHATSAPP_DESTINATION } from '@/config/whatsapp';
 import { buildWhatsAppUrl, formatLeadMessage, normalizePhone } from '@/lib/whatsapp';
+import { useLanguage } from '@/hooks/useLanguage';
 
-const Schema = z.object({
-  responsibleName: z.string().min(2, 'Nombre requerido'),
-  responsibleEmail: z.string().email('Email inválido'),
-  responsibleWhatsApp: z.string().min(6, 'WhatsApp requerido'),
-  country: z.string().min(2, 'País requerido'),
+function createSchema(t: any) {
+  return z.object({
+    responsibleName: z.string().min(2, t.bioLinkAnimal.responsibleNameRequired),
+    responsibleEmail: z.string().email(t.bioLinkAnimal.responsibleEmailInvalid),
+    responsibleWhatsApp: z.string().min(6, t.bioLinkAnimal.responsibleWhatsAppRequired),
+    country: z.string().min(2, t.bioLinkAnimal.countryRequired),
 
-  animalName: z.string().min(2, 'Nombre del animal requerido'),
-  species: z.string().min(2, 'Especie requerida'),
-  age: z.string().min(1, 'Edad requerida'),
+    animalName: z.string().min(2, t.bioLinkAnimal.animalNameRequired),
+    species: z.string().min(2, t.bioLinkAnimal.speciesRequired),
+    age: z.string().min(1, t.bioLinkAnimal.ageRequired),
 
-  veterinaryStatus: z.enum(['si', 'no']),
-  context: z.string().min(30, 'Contá el contexto (mín. 30 caracteres)'),
+    veterinaryStatus: z.enum(['si', 'no']),
+    context: z.string().min(30, t.bioLinkAnimal.contextMinLength),
 
-  acceptProtocol: z.literal(true, { errorMap: () => ({ message: 'Debés aceptar el protocolo' }) }),
-  acceptDisclaimer: z.literal(true, { errorMap: () => ({ message: 'Debés aceptar el disclaimer' }) }),
-});
-
-type Values = z.infer<typeof Schema>;
+    acceptProtocol: z.literal(true, { errorMap: () => ({ message: t.bioLinkAnimal.mustAcceptProtocol }) }),
+    acceptDisclaimer: z.literal(true, { errorMap: () => ({ message: t.bioLinkAnimal.mustAcceptDisclaimer }) }),
+  });
+}
 
 export function BioLinkAnimalForm(props: { regionLabel?: string; onSuccess?: () => void }) {
   const [sending, setSending] = useState(false);
+  const { t } = useLanguage();
+
+  const Schema = useMemo(() => createSchema(t), [t]);
+  type Values = z.infer<typeof Schema>;
 
   const form = useForm<Values>({
     resolver: zodResolver(Schema),
@@ -43,9 +48,8 @@ export function BioLinkAnimalForm(props: { regionLabel?: string; onSuccess?: () 
   });
 
   const protocolText = useMemo(
-    () =>
-      'Acepto el Protocolo de Ingreso y confirmo que BioLink Animal no reemplaza veterinaria.',
-    []
+    () => t.bioLinkAnimal.protocolText,
+    [t]
   );
 
   async function onSubmit(values: Values) {
@@ -76,7 +80,7 @@ export function BioLinkAnimalForm(props: { regionLabel?: string; onSuccess?: () 
 
       const url = buildWhatsAppUrl(phone, msg);
       window.open(url, '_blank', 'noopener,noreferrer');
-      toast.success('Listo. Abrimos WhatsApp con tu solicitud.');
+      toast.success(t.bioLinkAnimal.successMessage);
       props.onSuccess?.();
       form.reset();
     } finally {
@@ -87,30 +91,30 @@ export function BioLinkAnimalForm(props: { regionLabel?: string; onSuccess?: () 
   return (
     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <Field label="Nombre y apellido (responsable)">
-          <Input {...form.register('responsibleName')} placeholder="Nombre" />
+        <Field label={t.bioLinkAnimal.responsibleName}>
+          <Input {...form.register('responsibleName')} placeholder={t.bioLinkAnimal.responsibleName} />
           <Err msg={form.formState.errors.responsibleName?.message} />
         </Field>
-        <Field label="País">
-          <Input {...form.register('country')} placeholder="País" />
+        <Field label={t.forms.countryLabel}>
+          <Input {...form.register('country')} placeholder={t.forms.countryPlaceholder} />
           <Err msg={form.formState.errors.country?.message} />
         </Field>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <Field label="Email">
+        <Field label={t.bioLinkAnimal.responsibleEmail}>
           <EmailInput
             value={form.watch('responsibleEmail') ?? ''}
             onChange={(v) => form.setValue('responsibleEmail', v, { shouldValidate: true, shouldDirty: true })}
-            placeholder="tu@email.com"
+            placeholder={t.forms.emailPlaceholder}
           />
           <Err msg={form.formState.errors.responsibleEmail?.message} />
         </Field>
-        <Field label="WhatsApp">
+        <Field label={t.bioLinkAnimal.responsibleWhatsApp}>
           <CountryPhoneInput
             value={form.watch('responsibleWhatsApp') ?? ''}
             onChange={(v) => form.setValue('responsibleWhatsApp', v, { shouldValidate: true, shouldDirty: true })}
-            placeholder="Número"
+            placeholder={t.forms.whatsappPlaceholder}
             defaultCountry="AR"
           />
           <Err msg={form.formState.errors.responsibleWhatsApp?.message} />
@@ -118,39 +122,39 @@ export function BioLinkAnimalForm(props: { regionLabel?: string; onSuccess?: () 
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <Field label="Nombre del animal">
-          <Input {...form.register('animalName')} placeholder="Nombre" />
+        <Field label={t.bioLinkAnimal.animalName}>
+          <Input {...form.register('animalName')} placeholder={t.bioLinkAnimal.animalNamePlaceholder} />
           <Err msg={form.formState.errors.animalName?.message} />
         </Field>
-        <Field label="Especie">
-          <Input {...form.register('species')} placeholder="Perro, gato, etc." />
+        <Field label={t.bioLinkAnimal.species}>
+          <Input {...form.register('species')} placeholder={t.bioLinkAnimal.speciesPlaceholder} />
           <Err msg={form.formState.errors.species?.message} />
         </Field>
-        <Field label="Edad">
-          <Input {...form.register('age')} placeholder="Ej: 5 años" />
+        <Field label={t.bioLinkAnimal.age}>
+          <Input {...form.register('age')} placeholder={t.bioLinkAnimal.agePlaceholder} />
           <Err msg={form.formState.errors.age?.message} />
         </Field>
       </div>
 
-      <Field label="¿Está bajo supervisión veterinaria activa?">
+      <Field label={t.bioLinkAnimal.veterinaryStatus}>
         <div className="flex flex-wrap gap-3 text-sm text-white/80">
           <label className="inline-flex items-center gap-2">
             <input type="radio" value="si" {...form.register('veterinaryStatus')} />
-            Sí
+            {t.bioLinkAnimal.veterinaryYes}
           </label>
           <label className="inline-flex items-center gap-2">
             <input type="radio" value="no" {...form.register('veterinaryStatus')} />
-            No
+            {t.bioLinkAnimal.veterinaryNo}
           </label>
         </div>
         <Err msg={form.formState.errors.veterinaryStatus?.message as any} />
       </Field>
 
-      <Field label="Contexto (mín. 5 líneas recomendadas)">
+      <Field label={t.bioLinkAnimal.context}>
         <textarea
           {...form.register('context')}
           className="min-h-[140px] w-full rounded-md border border-white/10 bg-black/30 px-3 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-quantum-orange/40"
-          placeholder="Contanos situación, antecedentes, contexto actual, y qué querés observar en el proceso..."
+          placeholder={t.bioLinkAnimal.contextPlaceholder}
         />
         <Err msg={form.formState.errors.context?.message} />
       </Field>
@@ -164,19 +168,17 @@ export function BioLinkAnimalForm(props: { regionLabel?: string; onSuccess?: () 
 
         <label className="flex items-start gap-2">
           <input type="checkbox" {...form.register('acceptDisclaimer')} />
-          <span>
-            Entiendo que este servicio no reemplaza atención veterinaria ni implica diagnóstico o tratamiento.
-          </span>
+          <span>{t.bioLinkAnimal.disclaimerText}</span>
         </label>
         <Err msg={form.formState.errors.acceptDisclaimer?.message} />
       </div>
 
       <Button type="submit" disabled={sending} className="w-full">
-        {sending ? 'Preparando WhatsApp…' : 'Enviar por WhatsApp'}
+        {sending ? t.bioLinkAnimal.sendingButton : t.bioLinkAnimal.sendButton}
       </Button>
 
       <p className="text-xs text-white/50">
-        Al enviar, se abrirá WhatsApp con el mensaje listo para confirmar.
+        {t.forms.whatsappNote}
       </p>
     </form>
   );

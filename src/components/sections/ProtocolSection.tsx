@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/Dialog';
 import { Shield, FileText } from 'lucide-react';
 import { useState } from 'react';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const PROTOCOL_POINTS = [
   {
@@ -54,6 +55,7 @@ const FULL_PROTOCOL = `Protocolo de Ingreso — Sistema Luz Cuántica
 
 export function ProtocolSection() {
   const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <section id="protocolo" className="relative py-20">
@@ -87,7 +89,7 @@ export function ProtocolSection() {
               Lectura completa
             </div>
             <p className="mt-3 text-sm text-white/70">
-              Antes de enviar cualquier formulario se solicita aceptación explícita del protocolo. Podés leerlo completo aquí.
+              {t.protocol.beforeSubmit}
             </p>
             <div className="mt-5">
               <Button onClick={() => setOpen(true)}>

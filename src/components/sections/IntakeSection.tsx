@@ -6,6 +6,7 @@ import { BioLinkAnimalForm } from '@/components/forms/BioLinkAnimalForm';
 import { BioLinkHabitatForm } from '@/components/forms/BioLinkHabitatForm';
 import { useState } from 'react';
 import { ClipboardList } from 'lucide-react';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export function IntakeSection(props: {
   regionLabel: string;
@@ -13,6 +14,7 @@ export function IntakeSection(props: {
 }) {
   const [animalOpen, setAnimalOpen] = useState(false);
   const [habitatOpen, setHabitatOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <section className="relative py-20">
@@ -43,7 +45,7 @@ export function IntakeSection(props: {
             </div>
 
             <p className="mt-5 text-xs text-white/50">
-              Al enviar, se abrirá WhatsApp con el mensaje prearmado para confirmar.
+              {t.forms.whatsappNote}
             </p>
           </div>
 

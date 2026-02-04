@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -11,28 +11,33 @@ import { CountryPhoneInput } from '@/components/ui/CountryPhoneInput';
 import { toast } from 'sonner';
 import { WHATSAPP_DESTINATION } from '@/config/whatsapp';
 import { buildWhatsAppUrl, formatLeadMessage, normalizePhone } from '@/lib/whatsapp';
+import { useLanguage } from '@/hooks/useLanguage';
 
-const Schema = z.object({
-  company: z.string().min(2, 'Empresa requerida'),
-  taxId: z.string().min(4, 'ID fiscal / CUIT requerido'),
-  contactName: z.string().min(2, 'Nombre requerido'),
-  contactRole: z.string().min(2, 'Rol requerido'),
-  contactEmail: z.string().email('Email inválido'),
-  contactWhatsApp: z.string().min(6, 'WhatsApp requerido'),
-  country: z.string().min(2, 'País requerido'),
+function createSchema(t: any) {
+  return z.object({
+    company: z.string().min(2, t.forms.required),
+    taxId: z.string().min(4, t.forms.required),
+    contactName: z.string().min(2, t.forms.nameMinLength),
+    contactRole: z.string().min(2, t.forms.required),
+    contactEmail: z.string().email(t.forms.emailInvalid),
+    contactWhatsApp: z.string().min(6, t.forms.whatsappMinLength),
+    country: z.string().min(2, t.forms.countryMinLength),
 
-  assetType: z.enum(['espacio', 'vehiculo', 'maquinaria', 'otro']),
-  assetLocation: z.string().min(3, 'Ubicación requerida'),
-  objective: z.string().min(30, 'Objetivo/contexto (mín. 30 caracteres)'),
+    assetType: z.enum(['espacio', 'vehiculo', 'maquinaria', 'otro']),
+    assetLocation: z.string().min(3, t.forms.required),
+    objective: z.string().min(30, t.bioLinkHabitat.objectiveMinLength),
 
-  acceptProtocol: z.literal(true, { errorMap: () => ({ message: 'Debés aceptar el protocolo' }) }),
-  acceptNoGuarantees: z.literal(true, { errorMap: () => ({ message: 'Debés aceptar la cláusula de no garantías' }) }),
-});
-
-type Values = z.infer<typeof Schema>;
+    acceptProtocol: z.literal(true, { errorMap: () => ({ message: t.forms.mustAcceptProtocol }) }),
+    acceptNoGuarantees: z.literal(true, { errorMap: () => ({ message: t.forms.mustAcceptProtocol }) }),
+  });
+}
 
 export function BioLinkHabitatForm(props: { regionLabel?: string; onSuccess?: () => void }) {
   const [sending, setSending] = useState(false);
+  const { t } = useLanguage();
+
+  const Schema = useMemo(() => createSchema(t), [t]);
+  type Values = z.infer<typeof Schema>;
 
   const form = useForm<Values>({
     resolver: zodResolver(Schema),
@@ -73,7 +78,7 @@ export function BioLinkHabitatForm(props: { regionLabel?: string; onSuccess?: ()
 
       const url = buildWhatsAppUrl(phone, msg);
       window.open(url, '_blank', 'noopener,noreferrer');
-      toast.success('Listo. Abrimos WhatsApp con tu solicitud.');
+      toast.success(t.bioLinkHabitat.successMessage);
       props.onSuccess?.();
       form.reset();
     } finally {
@@ -84,59 +89,59 @@ export function BioLinkHabitatForm(props: { regionLabel?: string; onSuccess?: ()
   return (
     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <Field label="Empresa">
-          <Input {...form.register('company')} placeholder="Nombre legal" />
+        <Field label={t.bioLinkHabitat.company}>
+          <Input {...form.register('company')} placeholder={t.bioLinkHabitat.companyPlaceholder} />
           <Err msg={form.formState.errors.company?.message} />
         </Field>
-        <Field label="ID fiscal / CUIT">
-          <Input {...form.register('taxId')} placeholder="CUIT / VAT / TAX ID" />
+        <Field label={t.bioLinkHabitat.taxId}>
+          <Input {...form.register('taxId')} placeholder={t.bioLinkHabitat.taxIdPlaceholder} />
           <Err msg={form.formState.errors.taxId?.message} />
         </Field>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <Field label="Nombre de contacto">
-          <Input {...form.register('contactName')} placeholder="Nombre" />
+        <Field label={t.bioLinkHabitat.contactName}>
+          <Input {...form.register('contactName')} placeholder={t.forms.namePlaceholder} />
           <Err msg={form.formState.errors.contactName?.message} />
         </Field>
-        <Field label="Rol">
-          <Input {...form.register('contactRole')} placeholder="Director, Ops, RRHH..." />
+        <Field label={t.bioLinkHabitat.contactRole}>
+          <Input {...form.register('contactRole')} placeholder={t.bioLinkHabitat.rolePlaceholder} />
           <Err msg={form.formState.errors.contactRole?.message} />
         </Field>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <Field label="Email">
+        <Field label={t.bioLinkHabitat.contactEmail}>
           <EmailInput
             value={form.watch('contactEmail') ?? ''}
             onChange={(v) => form.setValue('contactEmail', v, { shouldValidate: true, shouldDirty: true })}
-            placeholder="tu@email.com"
+            placeholder={t.forms.emailPlaceholder}
           />
           <Err msg={form.formState.errors.contactEmail?.message} />
         </Field>
-        <Field label="WhatsApp">
+        <Field label={t.bioLinkHabitat.contactWhatsApp}>
           <CountryPhoneInput
             value={form.watch('contactWhatsApp') ?? ''}
             onChange={(v) => form.setValue('contactWhatsApp', v, { shouldValidate: true, shouldDirty: true })}
-            placeholder="Número"
+            placeholder={t.forms.whatsappPlaceholder}
             defaultCountry="AR"
           />
           <Err msg={form.formState.errors.contactWhatsApp?.message} />
         </Field>
-        <Field label="País">
-          <Input {...form.register('country')} placeholder="País" />
+        <Field label={t.forms.countryLabel}>
+          <Input {...form.register('country')} placeholder={t.forms.countryPlaceholder} />
           <Err msg={form.formState.errors.country?.message} />
         </Field>
       </div>
 
-      <Field label="Tipo de activo">
+      <Field label={t.bioLinkHabitat.assetType}>
         <div className="flex flex-wrap gap-3 text-sm text-white/80">
           {(
             [
-              { v: 'espacio', l: 'Espacio' },
-              { v: 'vehiculo', l: 'Vehículo' },
-              { v: 'maquinaria', l: 'Maquinaria' },
-              { v: 'otro', l: 'Otro' },
+              { v: 'espacio', l: t.bioLinkHabitat.assetTypeSpace },
+              { v: 'vehiculo', l: t.bioLinkHabitat.assetTypeVehicle },
+              { v: 'maquinaria', l: t.bioLinkHabitat.assetTypeMachinery },
+              { v: 'otro', l: t.bioLinkHabitat.assetTypeOther },
             ] as const
           ).map((opt) => (
             <label key={opt.v} className="inline-flex items-center gap-2">
@@ -148,16 +153,16 @@ export function BioLinkHabitatForm(props: { regionLabel?: string; onSuccess?: ()
         <Err msg={form.formState.errors.assetType?.message as any} />
       </Field>
 
-      <Field label="Ubicación del activo">
-        <Input {...form.register('assetLocation')} placeholder="Ciudad / País" />
+      <Field label={t.bioLinkHabitat.assetLocation}>
+        <Input {...form.register('assetLocation')} placeholder={t.bioLinkHabitat.assetLocationPlaceholder} />
         <Err msg={form.formState.errors.assetLocation?.message} />
       </Field>
 
-      <Field label="Objetivo / contexto (mín. 5 líneas recomendadas)">
+      <Field label={t.bioLinkHabitat.objective}>
         <textarea
           {...form.register('objective')}
           className="min-h-[160px] w-full rounded-md border border-white/10 bg-black/30 px-3 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-quantum-orange/40"
-          placeholder="Contanos el activo, contexto operativo, limitaciones, y por qué están evaluando compatibilidad..."
+          placeholder={t.bioLinkHabitat.objectivePlaceholder}
         />
         <Err msg={form.formState.errors.objective?.message} />
       </Field>
@@ -165,25 +170,23 @@ export function BioLinkHabitatForm(props: { regionLabel?: string; onSuccess?: ()
       <div className="space-y-2 text-sm text-white/75">
         <label className="flex items-start gap-2">
           <input type="checkbox" {...form.register('acceptProtocol')} />
-          <span>Acepto el Protocolo de Ingreso.</span>
+          <span>{t.bioLinkHabitat.protocolText}</span>
         </label>
         <Err msg={form.formState.errors.acceptProtocol?.message} />
 
         <label className="flex items-start gap-2">
           <input type="checkbox" {...form.register('acceptNoGuarantees')} />
-          <span>
-            Entiendo que es un servicio intangible, sin garantías de resultados económicos u operativos, y no reemplaza ingeniería/arquitectura/mecánica.
-          </span>
+          <span>{t.bioLinkHabitat.noGuaranteesText}</span>
         </label>
         <Err msg={form.formState.errors.acceptNoGuarantees?.message} />
       </div>
 
       <Button type="submit" disabled={sending} className="w-full">
-        {sending ? 'Preparando WhatsApp…' : 'Enviar por WhatsApp'}
+        {sending ? t.bioLinkHabitat.sendingButton : t.bioLinkHabitat.sendButton}
       </Button>
 
       <p className="text-xs text-white/50">
-        Al enviar, se abrirá WhatsApp con el mensaje listo para confirmar.
+        {t.forms.whatsappNote}
       </p>
     </form>
   );
