@@ -6,20 +6,22 @@ import { PAYMENT_METHODS } from '@/config/payment';
 import type { Region } from '@/types';
 import { Copy } from 'lucide-react';
 import { toast } from 'sonner';
-
-async function copy(text: string) {
-  await navigator.clipboard.writeText(text);
-  toast.success('Copiado');
-}
+import { useLanguage } from '@/hooks/useLanguage';
 
 export function PaymentsModal(props: { open: boolean; onOpenChange: (v: boolean) => void; region: Region }) {
+  const { t } = useLanguage();
   const methods = PAYMENT_METHODS[props.region] ?? [];
+
+  async function copy(text: string) {
+    await navigator.clipboard.writeText(text);
+    toast.success(t.common.copied);
+  }
 
   return (
     <Dialog open={props.open} onOpenChange={props.onOpenChange}>
       <DialogContent className="max-w-3xl">
         <DialogHeader>
-          <DialogTitle>Medios de pago ({props.region})</DialogTitle>
+          <DialogTitle>{t.pricing.paymentsModalTitle} ({props.region})</DialogTitle>
         </DialogHeader>
 
         <div className="space-y-4">
@@ -44,7 +46,7 @@ export function PaymentsModal(props: { open: boolean; onOpenChange: (v: boolean)
                                 className="text-white/70 hover:text-white"
                               >
                                 <Copy className="h-4 w-4" />
-                                Copiar
+                                {t.common.copy}
                               </Button>
                             ) : null}
                           </div>
@@ -65,12 +67,12 @@ export function PaymentsModal(props: { open: boolean; onOpenChange: (v: boolean)
             ))
           ) : (
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-sm text-white/70">
-              No hay métodos configurados para esta región todavía.
+              {t.pricing.noMethodsAvailable}
             </div>
           )}
 
           <div className="rounded-2xl border border-quantum-gold/25 bg-quantum-gold/10 p-4 text-xs text-white/80">
-            Pagos: definitivos y no reembolsables. El envío de comprobante es requerido para confirmar agenda.
+            {t.pricing.paymentNotice}
           </div>
         </div>
       </DialogContent>

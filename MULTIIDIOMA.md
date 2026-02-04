@@ -26,7 +26,7 @@
 ## 🌍 Idiomas Disponibles
 
 ### **Español (ES)** - Predeterminado
-- Título hero: "Descubrí el Poder del Sistema de Luz Cuántica"
+- Título hero: "Descubrí el Poder del Sistema de Luz Cuántica ©"
 - Navegación en español
 - Footer completo
 

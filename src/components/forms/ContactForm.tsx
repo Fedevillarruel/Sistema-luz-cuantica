@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -11,17 +11,28 @@ import { EmailInput } from '@/components/ui/EmailInput';
 import { CountryPhoneInput } from '@/components/ui/CountryPhoneInput';
 import { WHATSAPP_DESTINATION } from '@/config/whatsapp';
 import { buildWhatsAppUrl, formatLeadMessage, normalizePhone } from '@/lib/whatsapp';
+import { useLanguage } from '@/hooks/useLanguage';
+import type { Translations } from '@/lib/i18n';
 
-const formSchema = z.object({
-  name: z.string().min(2, 'Nombre requerido (mínimo 2 caracteres)'),
-  email: z.string().email('Email inválido'),
-  country: z.string().min(2, 'País requerido'),
-  whatsapp: z.string().min(6, 'WhatsApp requerido'),
-  message: z.string().min(20, 'Por favor describe tu motivo (mínimo 20 caracteres)'),
-  acceptProtocol: z.boolean().refine((val) => val === true, 'Debes aceptar el protocolo'),
-});
+function createFormSchema(t: Translations) {
+  return z.object({
+    name: z.string().min(2, t.forms.nameMinLength),
+    email: z.string().email(t.forms.emailInvalid),
+    country: z.string().min(2, t.forms.countryMinLength),
+    whatsapp: z.string().min(6, t.forms.whatsappMinLength),
+    message: z.string().min(20, t.forms.messageMinLength),
+    acceptProtocol: z.boolean().refine((val) => val === true, t.forms.mustAcceptProtocol),
+  });
+}
 
-type FormData = z.infer<typeof formSchema>;
+type FormData = {
+  name: string;
+  email: string;
+  country: string;
+  whatsapp: string;
+  message: string;
+  acceptProtocol: boolean;
+};
 
 interface ContactFormProps {
   onSuccess?: () => void;
@@ -30,7 +41,10 @@ interface ContactFormProps {
 }
 
 export function ContactForm({ onSuccess, serviceLabel = 'Evaluación Energética S.L.C', regionLabel }: ContactFormProps) {
+  const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const formSchema = useMemo(() => createFormSchema(t), [t]);
 
   const {
     register,
@@ -63,15 +77,15 @@ export function ContactForm({ onSuccess, serviceLabel = 'Evaluación Energética
       const url = buildWhatsAppUrl(normalizePhone(WHATSAPP_DESTINATION), waMessage);
       window.open(url, '_blank', 'noopener,noreferrer');
 
-      toast.success('Listo. Abrimos WhatsApp con tu solicitud', {
-        description: 'Revisá el mensaje y enviá para confirmar.',
+      toast.success(t.forms.successTitle, {
+        description: t.forms.successDescription,
       });
 
       reset();
       onSuccess?.();
     } catch (error) {
-      toast.error('No pudimos abrir WhatsApp', {
-        description: 'Por favor, intentá nuevamente o desactivá el bloqueador de popups.',
+      toast.error(t.forms.errorTitle, {
+        description: t.forms.errorDescription,
       });
     } finally {
       setIsSubmitting(false);
@@ -82,40 +96,40 @@ export function ContactForm({ onSuccess, serviceLabel = 'Evaluación Energética
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
-          Nombre completo *
+          {t.forms.nameLabel} {t.forms.required}
         </label>
-        <Input {...register('name')} placeholder="Juan Pérez" />
+        <Input {...register('name')} placeholder={t.forms.namePlaceholder} />
         {errors.name && <p className="mt-1 text-xs text-red-400">{errors.name.message}</p>}
       </div>
 
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
-          Email *
+          {t.forms.emailLabel} {t.forms.required}
         </label>
         <EmailInput
           value={email}
           onChange={(v) => setValue('email', v, { shouldValidate: true, shouldDirty: true })}
-          placeholder="tu@email.com"
+          placeholder={t.forms.emailPlaceholder}
         />
         {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email.message}</p>}
       </div>
 
       <div>
         <label htmlFor="country" className="block text-sm font-medium text-gray-300 mb-1">
-          País *
+          {t.forms.countryLabel} {t.forms.required}
         </label>
-        <Input {...register('country')} placeholder="Argentina" />
+        <Input {...register('country')} placeholder={t.forms.countryPlaceholder} />
         {errors.country && <p className="mt-1 text-xs text-red-400">{errors.country.message}</p>}
       </div>
 
       <div>
         <label htmlFor="whatsapp" className="block text-sm font-medium text-gray-300 mb-1">
-          WhatsApp (con código de país) *
+          {t.forms.whatsappLabel} {t.forms.required}
         </label>
         <CountryPhoneInput
           value={whatsapp}
           onChange={(v) => setValue('whatsapp', v, { shouldValidate: true, shouldDirty: true })}
-          placeholder="Número"
+          placeholder={t.forms.whatsappPlaceholder}
           defaultCountry="AR"
         />
         {errors.whatsapp && <p className="mt-1 text-xs text-red-400">{errors.whatsapp.message}</p>}
@@ -123,13 +137,13 @@ export function ContactForm({ onSuccess, serviceLabel = 'Evaluación Energética
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
-          Motivo de consulta *
+          {t.forms.messageLabel} {t.forms.required}
         </label>
         <textarea
           {...register('message')}
           rows={4}
           className="flex w-full rounded-md border border-quantum-cyan/30 bg-quantum-dark px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-quantum-cyan focus:ring-offset-2 focus:ring-offset-quantum-darker"
-          placeholder="Describe brevemente tu motivo de consulta..."
+          placeholder={t.forms.messagePlaceholder}
         />
         {errors.message && <p className="mt-1 text-xs text-red-400">{errors.message.message}</p>}
       </div>
@@ -141,21 +155,17 @@ export function ContactForm({ onSuccess, serviceLabel = 'Evaluación Energética
           className="mt-1 rounded border-quantum-cyan/30 bg-quantum-dark text-quantum-cyan focus:ring-quantum-cyan"
         />
         <label className="text-sm text-gray-300">
-          Acepto el{' '}
-          <button type="button" className="text-quantum-cyan hover:underline">
-            Protocolo de Ingreso
-          </button>{' '}
-          y comprendo que la Evaluación no garantiza acceso automático a otros servicios. *
+          {t.forms.acceptProtocol} {t.forms.required}
         </label>
       </div>
       {errors.acceptProtocol && <p className="text-xs text-red-400">{errors.acceptProtocol.message}</p>}
 
       <Button type="submit" className="w-full" disabled={isSubmitting}>
-        {isSubmitting ? 'Enviando...' : 'Enviar Solicitud'}
+        {isSubmitting ? t.forms.submittingButton : t.forms.submitButton}
       </Button>
 
       <p className="text-xs text-gray-500 text-center">
-        Los campos marcados con * son obligatorios. No reembolsable una vez abonado.
+        {t.forms.whatsappNote}
       </p>
     </form>
   );
