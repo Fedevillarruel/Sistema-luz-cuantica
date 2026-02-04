@@ -14,7 +14,7 @@ export default function DisclaimerPage() {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-3">NO Somos Servicios de Salud</h2>
             <p className="font-semibold text-quantum-gold">
-              Sistema Luz Cuántica NO es un servicio médico, psicológico, psiquiátrico ni de salud convencional.
+              Sistema Luz Cuántica® NO es un servicio médico, psicológico, psiquiátrico ni de salud convencional.
             </p>
             <p className="mt-2">
               NO diagnosticamos enfermedades. NO prescribimos medicamentos ni tratamientos. NO reemplazamos atención médica, psicológica ni psiquiátrica profesional.

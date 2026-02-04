@@ -107,7 +107,7 @@ export default function CookiesPage() {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-3">Contacto</h2>
             <p>
-              Consultas sobre cookies: contacto@luzcuantica.com
+              Consultas sobre cookies: sistemaluzcuantica@gmail.com
             </p>
           </section>
 

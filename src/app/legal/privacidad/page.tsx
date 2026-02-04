@@ -53,7 +53,7 @@ export default function PrivacidadPage() {
               <li>Oponerse al procesamiento de sus datos</li>
               <li>Solicitar portabilidad de datos</li>
             </ul>
-            <p className="mt-2">Para ejercer estos derechos: contacto@luzcuantica.com</p>
+            <p className="mt-2">Para ejercer estos derechos: sistemaluzcuantica@gmail.com</p>
           </section>
 
           <section>
@@ -66,7 +66,7 @@ export default function PrivacidadPage() {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-3">7. Contacto</h2>
             <p>
-              Para consultas sobre privacidad: contacto@luzcuantica.com
+              Para consultas sobre privacidad: sistemaluzcuantica@gmail.com
             </p>
           </section>
 

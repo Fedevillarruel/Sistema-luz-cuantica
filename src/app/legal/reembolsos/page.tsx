@@ -20,7 +20,7 @@ export default function ReembolsosPage() {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-3">1. Política General</h2>
             <p>
-              Todos los pagos realizados por servicios del Sistema Luz Cuántica son definitivos y NO reembolsables bajo ninguna circunstancia.
+              Todos los pagos realizados por servicios del Sistema Luz Cuántica® son definitivos y NO reembolsables bajo ninguna circunstancia.
             </p>
           </section>
 
@@ -62,7 +62,7 @@ export default function ReembolsosPage() {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-3">7. Errores de Pago</h2>
             <p>
-              En caso de error técnico en el procesamiento de pago (pago duplicado, monto incorrecto por error del sistema), contacte inmediatamente a contacto@luzcuantica.com. Cada caso será evaluado individualmente.
+              En caso de error técnico en el procesamiento de pago (pago duplicado, monto incorrecto por error del sistema), contacte inmediatamente a sistemaluzcuantica@gmail.com. Cada caso será evaluado individualmente.
             </p>
             <p className="mt-2">
               Los errores de usuario (pago del servicio equivocado, cambio de opinión, etc.) NO generan derecho a reembolso.
@@ -79,7 +79,7 @@ export default function ReembolsosPage() {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-3">9. Contacto</h2>
             <p>
-              Consultas: contacto@luzcuantica.com
+              Consultas: sistemaluzcuantica@gmail.com
             </p>
           </section>
 

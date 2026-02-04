@@ -29,10 +29,10 @@ export function Footer() {
               <div className="relative w-10 h-10 rounded-lg overflow-hidden bg-black/20">
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-quantum-orange/25 via-transparent to-quantum-cyan/20" />
                 <div className="absolute -inset-6 bg-quantum-orange/10 blur-2xl" aria-hidden="true" />
-                <Image src="/logo.webp" alt="Sistema Luz Cuántica" fill className="relative object-contain p-1.5" />
+                <Image src="/logo.webp" alt="Sistema Luz Cuántica®" fill className="relative object-contain p-1.5" />
               </div>
               <div>
-                <div className="text-sm font-bold text-white">Sistema Luz Cuántica</div>
+                <div className="text-sm font-bold text-white">Sistema Luz Cuántica®</div>
                 <div className="text-xs text-quantum-cyan">S.L.C.</div>
               </div>
             </div>
@@ -65,8 +65,9 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-white mb-4">{t.footer.contact}</h3>
             <div className="space-y-2 text-sm text-gray-400">
-              <p>{t.footer.email}: contacto@luzcuantica.com</p>
-              <p>{t.footer.whatsapp}: +54 9 11 XXXX-XXXX</p>
+              <p>{t.footer.email}: sistemaluzcuantica@gmail.com</p>
+              <p>{t.footer.whatsapp}: +54 9 2657 283150</p>
+              <p className="text-xs text-gray-500">Tel. Fijo: 2657 816401</p>
             </div>
           </div>
         </div>

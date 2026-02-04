@@ -189,7 +189,7 @@ export interface Translations {
 export const translations: Record<Language, Translations> = {
   es: {
     hero: {
-      title: 'Descubrí el Poder del Sistema de Luz Cuántica ©',
+      title: 'Descubrí el Poder del Sistema de Luz Cuántica®',
       subtitle: 'Estructura técnica de transformación consciente. Arquitectura matriz cerrada, protocolos definidos, límites claros.',
       ctaEvaluation: 'Solicitar Evaluación Energética',
       ctaVideo: 'Ver Presentación',
@@ -241,7 +241,7 @@ export const translations: Record<Language, Translations> = {
       subtitle: 'Respuestas a las consultas más comunes',
     },
     footer: {
-      brand: 'Sistema Luz Cuántica',
+      brand: 'Sistema Luz Cuántica®',
       brandSubtitle: 'S.L.C.',
       legal: 'Legal',
       contact: 'Contacto',
@@ -374,7 +374,7 @@ export const translations: Record<Language, Translations> = {
   },
   en: {
     hero: {
-      title: 'Discover the Power of the Quantum Light System',
+      title: 'Discover the Power of the Quantum Light System®',
       subtitle: 'Technical structure of conscious transformation. Closed matrix architecture, defined protocols, clear boundaries.',
       ctaEvaluation: 'Request Energy Evaluation',
       ctaVideo: 'Watch Presentation',
@@ -426,7 +426,7 @@ export const translations: Record<Language, Translations> = {
       subtitle: 'Answers to the most common questions',
     },
     footer: {
-      brand: 'Quantum Light System',
+      brand: 'Quantum Light System®',
       brandSubtitle: 'Q.L.S.',
       legal: 'Legal',
       contact: 'Contact',
@@ -611,7 +611,7 @@ export const translations: Record<Language, Translations> = {
       subtitle: 'Respostas às perguntas mais comuns',
     },
     footer: {
-      brand: 'Sistema Luz Quântica',
+      brand: 'Sistema Luz Quântica®',
       brandSubtitle: 'S.L.Q.',
       legal: 'Legal',
       contact: 'Contato',

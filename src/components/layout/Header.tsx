@@ -38,10 +38,10 @@ export function Header({ region, onRegionChange, onOpenEvaluation }: HeaderProps
               <div className="relative w-11 h-11 rounded-xl overflow-hidden bg-black/20">
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-quantum-orange/25 via-transparent to-quantum-cyan/20" />
                 <div className="absolute -inset-6 bg-quantum-orange/10 blur-2xl" aria-hidden="true" />
-                <Image src="/logo.webp" alt="Sistema Luz Cuántica" fill className="relative object-contain p-1.5" priority />
+                <Image src="/logo.webp" alt="Sistema Luz Cuántica®" fill className="relative object-contain p-1.5" priority />
               </div>
               <div className="hidden sm:block">
-                <div className="text-sm font-bold text-white">Sistema Luz Cuántica</div>
+                <div className="text-sm font-bold text-white">Sistema Luz Cuántica®</div>
                 <div className="text-xs text-quantum-cyan">S.L.C.</div>
               </div>
             </a>

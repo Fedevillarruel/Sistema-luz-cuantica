@@ -14,7 +14,7 @@ export default function TerminosPage() {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-3">1. Aceptación de Términos</h2>
             <p>
-              Al acceder y utilizar los servicios del Sistema Luz Cuántica (en adelante "S.L.C."), usted acepta estar vinculado por estos Términos y Condiciones. Si no está de acuerdo, no utilice nuestros servicios.
+              Al acceder y utilizar los servicios del Sistema Luz Cuántica® (en adelante "S.L.C."), usted acepta estar vinculado por estos Términos y Condiciones. Si no está de acuerdo, no utilice nuestros servicios.
             </p>
           </section>
 
@@ -62,7 +62,7 @@ export default function TerminosPage() {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-3">7. Propiedad Intelectual</h2>
             <p>
-              "Sistema Luz Cuántica", "S.L.C", "Reiki Energy Quantum", "GENETIC QUANTY", "BioLink Animal S.L.C", "BioLink Habitat & Mobility S.L.C" y demás marcas son propiedad exclusiva.
+              "Sistema Luz Cuántica®", "S.L.C", "Reiki Energy Quantum", "GENETIC QUANTY", "BioLink Animal S.L.C", "BioLink Habitat & Mobility S.L.C" y demás marcas son propiedad exclusiva.
             </p>
           </section>
 
@@ -76,7 +76,7 @@ export default function TerminosPage() {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-3">9. Contacto</h2>
             <p>
-              Para consultas sobre estos términos: contacto@luzcuantica.com
+              Para consultas sobre estos términos: sistemaluzcuantica@gmail.com
             </p>
           </section>
 

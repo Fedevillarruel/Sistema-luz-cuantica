@@ -3,15 +3,14 @@ import type { Service } from '@/types';
 export const SERVICES: Service[] = [
   {
     id: 'evaluacion-energetica',
-    name: 'Evaluación Energética S.L.C',
+    name: 'Evaluación Energética S.L.C®',
     tagline: 'El punto de partida oficial del sistema',
-    description: 'Análisis informacional del campo energético individual para determinar compatibilidad con el Sistema Luz Cuántica y definir las herramientas coherentes según el estado del campo.',
+    description: 'Análisis informacional del campo energético individual para determinar compatibilidad con el Sistema Luz Cuántica® y definir las herramientas coherentes según el estado del campo.',
     bullets: [
       'Mapeo inicial del campo informacional',
       'Determinación de aptitud para ingreso al sistema',
       'Definición de herramientas coherentes según el estado del campo',
       'No garantiza acceso automático a otros servicios',
-      'Duración: 60-90 minutos (virtual o presencial)',
     ],
     requiresEvaluation: false,
     category: 'personal',

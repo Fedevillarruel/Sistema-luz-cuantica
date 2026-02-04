@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Sistema Luz Cuántica | Arquitectura de Transformación Consciente',
+  title: 'Sistema Luz Cuántica® | Arquitectura de Transformación Consciente',
   description: 'Estructura técnica de transformación consciente. Arquitectura cerrada, protocolos definidos, excelencia operativa. Evaluación Energética, Reiki Energy Quantum, Constelaciones Familiares Cuánticas Estelares y más.',
   keywords: 'evaluación energética, reiki cuántico, constelaciones familiares, GENETIC QUANTY, biolink animal, transformación consciente, coherencia energética',
   authors: [{ name: 'Sergio Andrés López Madeo' }],
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'es_ES',
     url: 'https://luzcuantica.com',
-    title: 'Sistema Luz Cuántica',
+    title: 'Sistema Luz Cuántica®',
     description: 'Estructura técnica de transformación consciente. Arquitectura cerrada, protocolos definidos, excelencia operativa.',
-    siteName: 'Sistema Luz Cuántica',
+    siteName: 'Sistema Luz Cuántica®',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sistema Luz Cuántica',
+    title: 'Sistema Luz Cuántica®',
     description: 'Estructura técnica de transformación consciente.',
   },
   robots: {
@@ -53,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: 'Sistema Luz Cuántica',
+              name: 'Sistema Luz Cuántica®',
               description: 'Estructura técnica de transformación consciente',
               url: 'https://luzcuantica.com',
       logo: 'https://luzcuantica.com/logo.webp',
