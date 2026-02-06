@@ -12,24 +12,6 @@ export const PAYMENT_METHODS: Record<Region, PaymentMethod[]> = {
       ],
     },
     {
-      type: 'usd-argentina',
-      label: 'Transferencia USD (desde Argentina)',
-      fields: [
-        { label: 'Account Holder Name', value: 'Sergio Andres Lopez Madeo', copyable: false },
-        { label: 'Account Number', value: '8339041548', copyable: true },
-        { label: 'Account Type', value: 'Checking', copyable: false },
-        { label: 'Routing Number', value: '026073150', copyable: true },
-        { label: 'Swift/BIC', value: 'CMFGUS33', copyable: true },
-        { label: 'Bank Name', value: 'Community Federal Savings Bank', copyable: false },
-        { label: 'Bank Address', value: '5 Penn Plaza, 14th Floor, New York, NY 10001, US', copyable: false },
-      ],
-      notes: [
-        'Solo aceptamos USD. Si pagás desde Argentina, confirmar con tu banco si es ACH o Wire.',
-        'Si es Wire puede tener costo de recepción. Sugerimos prueba de 10 USD.',
-        'Concepto sugerido: "Pago Sergio + fecha".',
-      ],
-    },
-    {
       type: 'sepa',
       label: 'Transferencia EUR (desde Argentina)',
       fields: [

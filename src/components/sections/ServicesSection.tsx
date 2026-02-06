@@ -62,6 +62,11 @@ export function ServicesSection(props: {
   }
 
   function handleCTA(s: Service) {
+    // Si es "coming soon", no hacer nada
+    if (s.comingSoon) {
+      return;
+    }
+    
     if (s.id === 'reiki-energy-quantum') {
       // Compra directa permitida.
       props.onRequestEvaluation();
@@ -121,6 +126,10 @@ export function ServicesSection(props: {
                       <div className="shrink-0 rounded-full border border-quantum-orange/25 bg-quantum-orange/10 px-3 py-1 text-[11px] text-quantum-orange">
                         {t.services.featured}
                       </div>
+                    ) : s.comingSoon ? (
+                      <div className="shrink-0 rounded-full border border-quantum-purple/25 bg-quantum-purple/10 px-3 py-1 text-[11px] text-quantum-purple">
+                        Próximamente
+                      </div>
                     ) : null}
                   </div>
 
@@ -133,10 +142,10 @@ export function ServicesSection(props: {
                   </div>
 
                   <div className="mt-5 flex flex-wrap gap-3">
-                    <Button variant="outline" onClick={() => openService(s)}>
+                    <Button variant="outline" onClick={() => openService(s)} disabled={s.comingSoon}>
                       {t.services.viewDetails}
                     </Button>
-                    <Button onClick={() => handleCTA(s)}>
+                    <Button onClick={() => handleCTA(s)} disabled={s.comingSoon}>
                       {s.ctaText}
                       <ArrowRight className="h-4 w-4" />
                     </Button>

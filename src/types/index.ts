@@ -32,6 +32,7 @@ export interface Service {
   ctaText: string;
   featured?: boolean;
   restrictions?: string[];
+  comingSoon?: boolean;
 }
 
 export interface PricingTier {

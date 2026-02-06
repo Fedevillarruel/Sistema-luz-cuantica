@@ -154,6 +154,22 @@ export const SERVICES: Service[] = [
       'No se puede reservar sin indicación previa',
     ],
   },
+  {
+    id: 'libros-novedades',
+    name: 'Libros y Novedades',
+    tagline: 'Próximamente',
+    description: 'Publicaciones, recursos educativos y material del Sistema Luz Cuántica®. En desarrollo.',
+    bullets: [
+      'Material educativo exclusivo del sistema',
+      'Libros y publicaciones en proceso',
+      'Recursos para profundización conceptual',
+      'Lanzamiento próximo',
+    ],
+    requiresEvaluation: false,
+    category: 'personal',
+    ctaText: 'Próximamente',
+    comingSoon: true,
+  },
 ];
 
 export function getServiceById(id: string): Service | undefined {
