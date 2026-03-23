@@ -33,6 +33,7 @@ export interface Service {
   featured?: boolean;
   restrictions?: string[];
   comingSoon?: boolean;
+  downloadUrl?: string;
 }
 
 export interface PricingTier {

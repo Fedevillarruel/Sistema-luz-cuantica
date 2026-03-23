@@ -6,7 +6,7 @@ import { SERVICES } from '@/config/services';
 import type { Region, Service } from '@/types';
 import { Button } from '@/components/ui/Button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/Dialog';
-import { ArrowRight, ChevronLeft, ChevronRight, Image as ImageIcon, ShieldAlert, Sparkles } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight, Image as ImageIcon, ShieldAlert, Sparkles, BookOpen, Download } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 
 // Mapeo de servicios a imágenes
@@ -66,6 +66,12 @@ export function ServicesSection(props: {
     if (s.comingSoon) {
       return;
     }
+
+    // Si tiene URL de descarga, abrir el PDF
+    if (s.downloadUrl) {
+      window.open(s.downloadUrl, '_blank', 'noopener,noreferrer');
+      return;
+    }
     
     if (s.id === 'reiki-energy-quantum') {
       // Compra directa permitida.
@@ -108,6 +114,67 @@ export function ServicesSection(props: {
             const priceLabel = s.requiresEvaluation
               ? t.services.priceConfirmEvaluation
               : t.services.priceConfirmWhatsApp;
+
+            // Tarjeta especial para descarga de libro
+            if (s.downloadUrl) {
+              return (
+                <div
+                  key={s.id}
+                  className="group relative rounded-2xl border border-quantum-gold/30 bg-gradient-to-b from-quantum-gold/[0.08] to-quantum-gold/[0.02] overflow-hidden"
+                >
+                  {/* Strip superior decorativo */}
+                  <div className="h-2 w-full bg-gradient-to-r from-quantum-gold/60 via-quantum-orange/60 to-quantum-gold/60" />
+
+                  <div className="p-6">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex items-center gap-3">
+                        <div className="rounded-xl border border-quantum-gold/30 bg-quantum-gold/10 p-2.5">
+                          <BookOpen className="h-5 w-5 text-quantum-gold" />
+                        </div>
+                        <div>
+                          <div className="text-xs text-quantum-gold/70 font-medium uppercase tracking-wide">Recurso gratuito</div>
+                          <h3 className="mt-0.5 text-lg font-semibold text-white leading-snug">{s.name}</h3>
+                        </div>
+                      </div>
+                      <div className="shrink-0 rounded-full border border-quantum-gold/40 bg-quantum-gold/15 px-3 py-1 text-[11px] font-semibold text-quantum-gold">
+                        GRATIS
+                      </div>
+                    </div>
+
+                    <p className="mt-4 text-sm text-white/70 leading-relaxed">{s.description}</p>
+
+                    <ul className="mt-4 space-y-2">
+                      {s.bullets.map((b) => (
+                        <li key={b} className="flex items-start gap-2 text-sm text-white/65">
+                          <span className="mt-1 h-1.5 w-1.5 rounded-full bg-quantum-gold/70 shrink-0" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <a
+                      href={s.downloadUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-quantum-gold/80 to-quantum-orange/80 px-5 py-3 text-sm font-semibold text-black transition hover:from-quantum-gold hover:to-quantum-orange active:scale-95"
+                    >
+                      <Download className="h-4 w-4" />
+                      Descargar PDF Gratis
+                    </a>
+
+                    <p className="mt-3 text-center text-xs text-white/40">
+                      Sin registro. Sin costo. Descarga directa.
+                    </p>
+                  </div>
+
+                  {/* Glow hover */}
+                  <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition">
+                    <div className="absolute -top-24 -left-24 h-56 w-56 rounded-full bg-quantum-gold/10 blur-3xl" />
+                    <div className="absolute -bottom-24 -right-24 h-56 w-56 rounded-full bg-quantum-orange/10 blur-3xl" />
+                  </div>
+                </div>
+              );
+            }
 
             return (
               <div
