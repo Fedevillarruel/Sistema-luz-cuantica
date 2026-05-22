@@ -50,8 +50,6 @@ export default function HomePage() {
           onOpenVideo={() => setVideoModalOpen(true)}
         />
 
-  <VideoShowcase />
-
         <WhatIs />
 
         <ServicesSection
