@@ -33,11 +33,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/logo.webp', type: 'image/webp' },
+      { url: '/favicon.png', type: 'image/png', sizes: '32x32' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
     ],
     apple: [
-      { url: '/logo.webp', type: 'image/webp' },
+      { url: '/apple-touch-icon.png', type: 'image/png', sizes: '180x180' },
     ],
+    shortcut: '/favicon.png',
   },
 };
 
@@ -45,8 +47,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={inter.variable}>
       <head>
-    <link rel="icon" href="/logo.webp" type="image/webp" />
-    <meta name="theme-color" content="#050810" />
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+        <meta name="theme-color" content="#050810" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -56,7 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'Sistema Luz Cuántica®',
               description: 'Estructura técnica de transformación consciente',
               url: 'https://luzcuantica.com',
-      logo: 'https://luzcuantica.com/logo.webp',
+              logo: 'https://luzcuantica.com/icon-512.png',
               sameAs: [],
               contactPoint: {
                 '@type': 'ContactPoint',
