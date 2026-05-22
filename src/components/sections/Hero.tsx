@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { ChevronDown, Play } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -15,9 +16,18 @@ export function Hero({ onOpenEvaluation, onOpenVideo }: HeroProps) {
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('/hero.webp')] bg-cover bg-center bg-no-repeat scale-[0.95]" />
+      {/* Background image – contain on mobile so the full collage is visible,
+           cover on md+ to fill the viewport */}
+      <div className="absolute inset-0 bg-black">
+        <Image
+          src="/hero.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-contain md:object-cover object-center"
+          aria-hidden="true"
+        />
         <div className="absolute inset-0 bg-black/70" />
       </div>
       
