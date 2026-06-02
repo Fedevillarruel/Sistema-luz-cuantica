@@ -47,8 +47,12 @@ export default function HomePage() {
       <main>
         <Hero
           onOpenEvaluation={() => setEvaluationModalOpen(true)}
-          onOpenVideo={() => setVideoModalOpen(true)}
+          onOpenVideo={() => {
+            document.getElementById('video')?.scrollIntoView({ behavior: 'smooth' });
+          }}
         />
+
+        <VideoShowcase />
 
         <WhatIs />
 
@@ -119,10 +123,12 @@ export default function HomePage() {
       <Dialog open={videoModalOpen} onOpenChange={setVideoModalOpen}>
         <DialogContent className="max-w-4xl">
           <DialogHeader>
-            <DialogTitle>Presentación del Sistema</DialogTitle>
+            <DialogTitle>Presentación del Sistema Luz Cuántica®</DialogTitle>
           </DialogHeader>
-          <div className="aspect-video bg-quantum-darker rounded-lg flex items-center justify-center text-gray-500">
-            <p>Video placeholder - Configurar NEXT_PUBLIC_VIDEO_URL</p>
+          <div className="aspect-video bg-black rounded-lg overflow-hidden">
+            <video className="w-full h-full" controls autoPlay playsInline>
+              <source src="/WhatsApp%20Video%202026-06-02%20at%2014.17.45.mp4" type="video/mp4" />
+            </video>
           </div>
         </DialogContent>
       </Dialog>
