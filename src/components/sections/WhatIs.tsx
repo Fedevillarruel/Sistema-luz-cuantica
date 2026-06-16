@@ -63,6 +63,11 @@ export function WhatIs() {
 
         <div className="mt-16 p-8 rounded-lg border border-quantum-gold/30 bg-quantum-gold/5">
           <h3 className="text-xl font-bold text-quantum-gold mb-4">Marco Profesional</h3>
+          <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen mb-6 border-y border-quantum-gold/35 bg-quantum-gold/10 py-3 px-4 text-center">
+            <p className="text-sm sm:text-base text-quantum-gold font-semibold tracking-wide">
+              Empresas e instituciones: <a href="mailto:geneticquanty@sistemaluzcuantica.com" className="underline decoration-quantum-gold/60 underline-offset-4 hover:text-white transition-colors">geneticquanty@sistemaluzcuantica.com</a>
+            </p>
+          </div>
           <div className="space-y-3 text-gray-300">
             <p>
               • <strong>NO somos salud:</strong> No diagnosticamos, no prescribimos, no tratamos enfermedades. No reemplazamos atención médica, psicológica ni psiquiátrica.

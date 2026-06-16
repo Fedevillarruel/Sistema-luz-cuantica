@@ -137,6 +137,15 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-white mb-4">{t.footer.contact}</h3>
             <div className="space-y-2 text-sm text-gray-400">
               <p>{t.footer.email}: sistemaluzcuantica@gmail.com</p>
+              <p>
+                Empresas/Instituciones:{' '}
+                <a
+                  href="mailto:geneticquanty@sistemaluzcuantica.com"
+                  className="text-quantum-cyan hover:text-quantum-gold transition-colors"
+                >
+                  geneticquanty@sistemaluzcuantica.com
+                </a>
+              </p>
               <p>{t.footer.whatsapp}: +54 9 2657 283150</p>
               <p className="text-xs text-gray-500">Tel. Fijo: 2657 816401</p>
             </div>
