@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Shield, Target, Layers, Zap } from 'lucide-react';
+import Image from 'next/image';
 
 export function WhatIs() {
   const features = [
@@ -63,10 +64,15 @@ export function WhatIs() {
 
         <div className="mt-16 p-8 rounded-lg border border-quantum-gold/30 bg-quantum-gold/5">
           <h3 className="text-xl font-bold text-quantum-gold mb-4">Marco Profesional</h3>
-          <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen mb-6 border-y border-quantum-gold/35 bg-quantum-gold/10 py-3 px-4 text-center">
-            <p className="text-sm sm:text-base text-quantum-gold font-semibold tracking-wide">
-              Empresas e instituciones: <a href="mailto:geneticquanty@sistemaluzcuantica.com" className="underline decoration-quantum-gold/60 underline-offset-4 hover:text-white transition-colors">geneticquanty@sistemaluzcuantica.com</a>
-            </p>
+          <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen mb-6 border-y border-quantum-gold/35 bg-quantum-gold/10">
+            <Image
+              src="/WhatsApp%20Image%202026-06-06%20at%2009.52.24.jpeg"
+              alt="Marco profesional"
+              width={2400}
+              height={1200}
+              className="w-full h-auto object-cover"
+              priority
+            />
           </div>
           <div className="space-y-3 text-gray-300">
             <p>
@@ -80,6 +86,9 @@ export function WhatIs() {
             </p>
             <p>
               • <strong>Decisión soberana:</strong> El núcleo central bajo conducción de Sergio Andrés López Madeo determina aptitud, herramientas y continuidad.
+            </p>
+            <p className="pt-2 text-quantum-gold font-semibold">
+              Empresas e instituciones: <a href="mailto:geneticquanty@sistemaluzcuantica.com" className="underline decoration-quantum-gold/60 underline-offset-4 hover:text-white transition-colors">geneticquanty@sistemaluzcuantica.com</a>
             </p>
           </div>
         </div>
