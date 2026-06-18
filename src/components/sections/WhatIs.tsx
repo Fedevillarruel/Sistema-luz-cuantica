@@ -62,35 +62,56 @@ export function WhatIs() {
           })}
         </div>
 
-        <div className="mt-16 p-8 rounded-lg border border-quantum-gold/30 bg-quantum-gold/5">
-          <h3 className="text-xl font-bold text-quantum-gold mb-4">Marco Profesional</h3>
-          <div className="mb-6 overflow-hidden rounded-xl border border-quantum-gold/35 bg-quantum-gold/10">
+        <div className="mt-16 overflow-hidden rounded-2xl border border-quantum-gold/30">
+          {/* Banner de imagen con fade inferior */}
+          <div className="relative w-full">
             <Image
               src="/WhatsApp%20Image%202026-06-06%20at%2009.52.24.jpeg"
-              alt="Marco profesional"
+              alt="Genetic Quanty — Marco Profesional"
               width={2400}
               height={1200}
               className="block w-full h-auto"
               sizes="(max-width: 768px) 100vw, (max-width: 1280px) 92vw, 1200px"
               priority
             />
+            {/* Fade inferior para transición suave al contenido */}
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-quantum-darker to-transparent" />
           </div>
-          <div className="space-y-3 text-gray-300">
-            <p>
-              • <strong>NO somos salud:</strong> No diagnosticamos, no prescribimos, no tratamos enfermedades. No reemplazamos atención médica, psicológica ni psiquiátrica.
-            </p>
-            <p>
-              • <strong>Naturaleza intangible:</strong> Operamos en planos energético e informacional. Los procesos son experienciales y variables.
-            </p>
-            <p>
-              • <strong>Sin garantías:</strong> No garantizamos resultados específicos ni tiempos definidos. Autonomía y responsabilidad personal.
-            </p>
-            <p>
-              • <strong>Decisión soberana:</strong> El núcleo central bajo conducción de Sergio Andrés López Madeo determina aptitud, herramientas y continuidad.
-            </p>
-            <p className="pt-2 text-quantum-gold font-semibold">
-              Empresas e instituciones: <a href="mailto:geneticquanty@sistemaluzcuantica.com" className="underline decoration-quantum-gold/60 underline-offset-4 hover:text-white transition-colors">geneticquanty@sistemaluzcuantica.com</a>
-            </p>
+
+          {/* Contenido */}
+          <div className="bg-quantum-darker px-6 py-8 sm:px-10 sm:py-10">
+            <h3 className="text-2xl sm:text-3xl font-bold text-quantum-gold mb-2 tracking-wide text-center">
+              Marco Profesional
+            </h3>
+            <div className="mx-auto mb-8 w-16 h-px bg-gradient-to-r from-transparent via-quantum-gold to-transparent" />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              {[
+                { title: 'NO somos salud', desc: 'No diagnosticamos, no prescribimos, no tratamos enfermedades. No reemplazamos atención médica, psicológica ni psiquiátrica.' },
+                { title: 'Naturaleza intangible', desc: 'Operamos en planos energético e informacional. Los procesos son experienciales y variables.' },
+                { title: 'Sin garantías', desc: 'No garantizamos resultados específicos ni tiempos definidos. Autonomía y responsabilidad personal.' },
+                { title: 'Decisión soberana', desc: 'El núcleo central bajo conducción de Sergio Andrés López Madeo determina aptitud, herramientas y continuidad.' },
+              ].map((item) => (
+                <div key={item.title} className="flex gap-3 p-4 rounded-xl bg-quantum-gold/5 border border-quantum-gold/15 hover:border-quantum-gold/35 transition-colors">
+                  <span className="flex-shrink-0 w-2 h-2 rounded-full bg-quantum-gold/70 mt-2" />
+                  <p className="text-sm text-gray-300 leading-relaxed">
+                    <strong className="text-quantum-gold/90 font-semibold">{item.title}:</strong>{' '}
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Email CTA */}
+            <div className="flex justify-center">
+              <a
+                href="mailto:geneticquanty@sistemaluzcuantica.com"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-quantum-gold/50 bg-quantum-gold/10 text-quantum-gold font-semibold text-sm hover:bg-quantum-gold/20 hover:border-quantum-gold transition-all tracking-wide"
+              >
+                <span>✉</span>
+                geneticquanty@sistemaluzcuantica.com
+              </a>
+            </div>
           </div>
         </div>
       </div>
